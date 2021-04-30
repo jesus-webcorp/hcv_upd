@@ -1,0 +1,46 @@
+FORMULARIO CHOCHO
+
+======Datos generales====
+* ¿Cómo te enteraste de Fundación Chocho?
+
+======Informacion personal=====
+* Toma o añade una fotografía desde tu dispositivo del asociado quien será el Beneficiario del programa. 
+* Nombre
+* Apellidos
+* Fecha
+* Edad
+* Sexo
+* Nivel de Estudios del Asociado
+* Diagnostico actual 
+* Nombre del medico tratante
+* Nombre de la institución medica que ayuda en el tratamiento del padecimiento
+* Actualmente recibes algún apoyo por parte de su gobierno (Municipal, estatal, Federal)
+* En caso de ser positiva tu respuesta anterior indícanos que tipo de apoyo se te brinda
+* ¿Qué tipo de apoyo necesitas de Fundación Chocho?
+
+======Localizacion========
+* Toma o añade una fotografía desde tu dispositivo del Asociado quien será el Beneficiario del programa.
+* Nombre de Padre o tutor Responsable
+* Teléfono Local de contacto
+* Teléfono Celular de contacto
+* Correo electrónico
+* Nombre de la calle en donde vive
+* Numero Interior
+* Numero Exterior
+* Municipio o Alcaldía
+* Código postal
+* Entidad Federativa
+
+cjbiorg
+
+
+========Situacion socioeconomica=======
+* Vive en casa Propia
+* Tipo de Piso
+* Tipo de Techo
+* Cuentas con Internet en casa
+* Número de personas que viven en el Hogar
+* De las personas que viven en el hogar, ¿Cuántas son mayores de edad?
+* Ingreso mensual aproximado entre las personas que viven en el hogar
+* ¿Qué cantidad aproximada de dinero se destina para los tratamientos y atención de la enfermedad mensualmente?
+* Indica que tiempo de traslado te toma llegar a la clínica u hospital para la atención de tu padecimiento.
