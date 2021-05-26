@@ -35,142 +35,24 @@
                 </div><!-- d-flex -->
             </div><!-- alert -->
 
-            <div class="alert alert-danger" id="error-alert" role="alert" style="display: none;">
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+            <div class="alert alert-danger" id="error-alert" role="alert" style="">
+        
                 <div class="d-flex align-items-center justify-content-start">
-                    <i class="icon ion-ios-close alert-icon tx-24"></i>
-                    <span><strong>ERROR!</strong><span id="error"></span></span>
+                    <span><strong><a href="<?=base_url().'/Hcv_Ficha_Identificacion'?>">COMPLETE SU FICHA DE IDENTIFICACION!</a></strong></span>
                 </div><!-- d-flex -->
             </div>
 
-            <div class="col-md-3">
-                <a href="" class="btn btn-info pd-x-20" data-toggle="modal" data-target="#modaldemo1">Nuevo Estatus Marital</a><br><br>
+            <div class="col-md-3 sin-padding">
+                <a href="" class="btn btn-info pd-x-20" data-toggle="modal" data-target="#modaldemo1">
+                    Ficha de identificación
+                </a><br><br>
             </div>
 
 
-            <!-- BASIC MODAL -->
-            <div id="modaldemo1" class="modal fade">
-                <div class="modal-dialog modal-dialog-vertical-center" role="document">
-                    <div class="modal-content bd-0 tx-14">
-                        <div class="modal-header pd-y-20 pd-x-25">
-                            <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Insertar Nuevo Estatus Marital</h6>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
 
-                        <form id="create_form" method="POST">
-                            <div class="modal-body pd-25">
-                                <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
-                                    <h6 class="card-body-title">Nuevo Estatus Marital</h6>
-                                    <p class="mg-b-20 mg-sm-b-30">Inserte por favor los siguientes campos.</p>
-                                    <div class="row">
-                                        <!--   <label class="col-sm-4 form-control-label">Nombre de pago: <span class="tx-danger">*</span></label>-->
-                                        <div class="col-sm-12 mg-t-10 mg-sm-t-0">
-                                            <input type="text" class="form-control" name="NAME" placeholder="NOMBRE" required>
-                                        </div>
-                                    </div><!-- row -->
-                                    <div class="row mg-t-20">
-                                        <!--  <label class="col-sm-4 form-control-label">Descripción: <span class="tx-danger">*</span></label>-->
-                                        <div class="col-sm-12 mg-t-10 mg-sm-t-0">
-                                            <textarea rows="2" class="form-control" name="DESCRIPTION" placeholder="DESCRIPCION" required></textarea>
-                                        </div>
-                                    </div>
-                                </div><!-- card -->
-                            </div>
-                        </form>
-                        <div class="modal-footer">
-                            <button id="submit_form_new" class="btn btn-info pd-x-20">Insertar Estatus Marital</button>
-                            <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div><!-- modal-dialog -->
-            </div><!-- modal -->
-
-
-
-            <div class="table-responsive">
-                <table id="datatable1" class="table display responsive nowrap">
-                    <thead>
-                        <tr>
-                            <th class="wd-15p">Nombre</th>
-                            <th class="wd-15p">Descripción</th>
-                            <th class="wd-20p"> Acción</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div><!-- table-wrapper -->
+            
         </div><!-- card -->
 
-        <!--Modal delete-->
-        <div id="modal_delete" class="modal fade">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content bd-0 tx-14">
-                    <div class="modal-header pd-x-20">
-                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Notice</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form method="POST" id="delete_form">
-                        <div class="modal-body pd-20">
-                            <p class="mg-b-5">¿Estas Seguro que quieres eliminar ? </p>
-                            <input type="hidden" name="id_delete" id="id_delete">
-                        </div>
-                    </form>
-                    <div class="modal-footer justify-content-center">
-                        <button id="submit_form_del" class="btn btn-info pd-x-20">Eliminar</button>
-                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div><!-- modal-dialog -->
-        </div><!-- modal -->
-
-        <div id="modal_update" class="modal fade">
-            <div class="modal-dialog modal-dialog-vertical-center" role="document">
-                <div class="modal-content bd-0 tx-14">
-                    <div class="modal-header pd-y-20 pd-x-25">
-                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Actualizar Estatus Marital</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form method="POST" id="update_form">
-                        <div class="modal-body pd-25">
-                            <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
-                                <h6 class="card-body-title">Actualizar Estatus Marital</h6>
-                                <p class="mg-b-20 mg-sm-b-30">Inserte por favor los siguientes campos.</p>
-                                <div class="row">
-                                    <!--   <label class="col-sm-4 form-control-label">Nombre de pago: <span class="tx-danger">*</span></label>-->
-                                    <div class="col-sm-12 mg-t-10 mg-sm-t-0">
-                                        <input type="text" class="form-control" name="UPDATE_NAME" id="update_name" placeholder="Nombre de pago" required>
-                                    </div>
-                                </div><!-- row -->
-
-                                <div class="row mg-t-20">
-                                    <!--  <label class="col-sm-4 form-control-label">Descripción: <span class="tx-danger">*</span></label>-->
-                                    <div class="col-sm-12 mg-t-10 mg-sm-t-0">
-                                        <textarea rows="2" class="form-control" name="UPDATE_DESCRIPTION" id="update_descripcion" placeholder="Descripción" required></textarea>
-                                        <input type="hidden" name="id_upd" id="id_upd">
-                                    </div>
-                                </div>
-
-                            </div><!-- card -->
-                        </div>
-                    </form>
-                    <div class="modal-footer">
-                        <button id="submit_form_upd" class="btn btn-info pd-x-20">Actualizar Estatus Marital</button>
-                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Cerrar</button>
-                    </div>
-
-                </div>
-            </div><!-- modal-dialog -->
-        </div><!-- modal -->
 
         <script src="../../assets/lib/datatables/jquery.dataTables.js"></script>
         <script src="../../assets/lib/datatables-responsive/dataTables.responsive.js"></script>
