@@ -15,7 +15,15 @@ class Hcv_Rest_Cp extends ResourceController
         //var_dump($json);
         $model = model('App\Models\Models_hcv\Model_cp');
         $data['data'] = $model->like('CP',$search)->orderBy('ID', 'CP')->findAll($limit , $offset);
-        return $this->respond($data, 200);
+        $response = [
+            'status'   => 200,
+            'error'    => null,
+            'data'     => $data['data'],
+            'messages' => [
+                'success' => 'ok'
+              ]
+          ];
+        return $this->respond($response);
     }
 
     public function create()
