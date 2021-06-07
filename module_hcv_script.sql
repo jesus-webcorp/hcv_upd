@@ -238,6 +238,22 @@ CREATE TABLE `HCV_CAT_MARITAL_STATUS` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+DROP TABLE IF EXISTS `HCV_CAT_CP`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HCV_CAT_CP` (
+    `ID` int(11) NOT NULL AUTO_INCREMENT,
+    `CP` VARCHAR(25),
+    `ASENTAMIENTO` VARCHAR(255),
+    `TIPO` VARCHAR(255),
+    `MUNICIPIO` VARCHAR(255),
+    `CIUDAD` VARCHAR(255),
+    `ESTADO` VARCHAR(255),
+    `CLASIFICACION` VARCHAR(255),
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 /*###########################################################-----RELIGION---
 
