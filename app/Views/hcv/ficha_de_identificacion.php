@@ -341,51 +341,52 @@
         <script src="../../assets/lib/select2/js/select2.min.js"></script>
 
         <script>
-
-        
-            sendFormDel();
-
             
-
+            sendFormDel();
             function sendFormDel() {
-                $(document).on('click', '#send', function() {
-                    $('#loader').toggle();
-                    var url_str = '<?=base_url().'/Hcv_Rest_marital_Status/delete'?>';
-                    var Form = $("#ficha_description").serializeArray();
-                    var FormObject = {};
-                    $.each(Form,
-                        function(i, v) {
-                            FormObject[v.name] = v.value;
-                        }
-                    );
+    
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
+                
+                    var cp = {
+                        "search" : "55070",
+                        "limit" : "10",
+                        "offset": "0"
+                        
+                    };
+                
+                console.log(cp)
+        
                     $.ajax({
                         url: url_str,
                         type: "POST",
                         dataType: 'json',
-                        data: JSON.stringify(FormObject),
+                        data: JSON.stringify(cp),
                         success: function(result) {
-                            if (result.status == 200) {
+                            if (result.status != 200) {
                                 console.log(result);
                                 $('#success').text(result.messages.success);
                                 $('#succes-alert').show();
-                                reloadData();
+                             
                             } else {
                                 $('#error').text(result.error);
                                 $('#error-alert').show();
                             }
                             $('#loader').toggle();
-                            $('#modal_delete').modal('toggle');
+                        
                         },
                         error: function(xhr, resp, text) {
                             console.log(xhr, resp, text);
                             $('#loader').toggle();
                             $('#error-alert').show();
                             $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-                            $('#modal_delete').modal('toggle');
+                         
                         }
                     })
-                });
+               
             }
+            
+        
 
 
             $(document).on('click', '.btn-danger', function() {
