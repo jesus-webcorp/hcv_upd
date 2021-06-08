@@ -342,8 +342,9 @@
 
         <script>
             
-            sendFormDel();
-            function sendFormDel() {
+            datacp();
+            data_academic();
+            function datacp() {
     
         
                     var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
@@ -355,7 +356,7 @@
                         
                     };
                 
-                console.log(cp)
+          
         
                     $.ajax({
                         url: url_str,
@@ -363,16 +364,52 @@
                         dataType: 'json',
                         data: JSON.stringify(cp),
                         success: function(result) {
-                            if (result.status != 200) {
+                            if (result.status == 200) {
                                 console.log(result);
                                 $('#success').text(result.messages.success);
                                 $('#succes-alert').show();
+                                 //reloadData();
+                              
                              
                             } else {
                                 $('#error').text(result.error);
                                 $('#error-alert').show();
                             }
+                            //$('#loader').toggle();
+                        
+                        },
+                        error: function(xhr, resp, text) {
+                            console.log(xhr, resp, text);
                             $('#loader').toggle();
+                            $('#error-alert').show();
+                            $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+                         
+                        }
+                    })
+               
+            }
+            
+            function data_academic() {
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
+                
+                    $.ajax({
+                        url: url_str,
+                        type: "GET",
+                        dataType: 'json',
+                        success: function(result) {
+                            if (result.id == 200) {
+                                console.log(result);
+                                $('#success').text(result.messages.success);
+                                $('#succes-alert').show();
+                                 //reloadData();
+                              
+                             
+                            } else {
+                                $('#error').text(result.error);
+                                $('#error-alert').show();
+                            }
+                            //$('#loader').toggle();
                         
                         },
                         error: function(xhr, resp, text) {
@@ -404,7 +441,7 @@
 
             function reloadData() {
                 $('#loader').toggle();
-                dataTable.ajax.reload();
+                sendFormDel.ajax.reload();
                 $('#loader').toggle();
             }
 
@@ -440,4 +477,10 @@
                     }
                 })
             });
+            
+
         </script>
+        
+       
+      
+     
