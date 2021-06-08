@@ -8,9 +8,22 @@ class Hcv_Rest_Academic extends ResourceController
     use ResponseTrait;
 
     public function index(){
-      $model = model('App\Models\Models_hcv\Model_academic');
-      $data['data'] = $model->orderBy('ID', 'DESC')->findAll();
-      return $this->respond($data, 200);
+        $model = model('App\Models\Models_hcv\Model_academic');
+        $data['data'] = $model->orderBy('ID', 'DESC')->findAll();
+        $result = true;
+        if($result){
+            $response = [
+                'status'   => 200,
+                'error'    => null,
+                'data'     => $data['data'],
+                'messages' => [
+                    'success' => 'SE INSERTARON '.$result." REGISTROS"
+                  ]
+              ];
+            return $this->respond($response);
+        }else{
+            return $this->failServerError('HA OCURRIDO UN ERROR AL ACTUALIZAR EL CATALOGO');
+        }
     }
 
     public function create()
