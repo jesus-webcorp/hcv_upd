@@ -73,12 +73,8 @@
                             <div class="row">
                                 <label class="col-sm-4 form-control-label">Nacionalidad: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="nacionalidad" data-placeholder="Choose country">
-                                        <option label="Elige tu nacionalidad"></option>
-                                        <option value="USA">United States of America</option>
-                                        <option value="UK">United Kingdom</option>
-                                        <option value="China">China</option>
-                                        <option value="Japan">Japan</option>
+                                    <select class="form-control select2" id="nacionalidad" name="nacionalidad" data-placeholder="Choose country">
+                                   
                                     </select>
                                 </div>
                             </div><!-- row -->
@@ -222,9 +218,9 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Formación Academica: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="ID_CAT_ACADEMIC" data-placeholder="Choose country">
-                                        <option label="Elige el grado de formación"></option>
-                                        <option value="Cisgenero">Cisgenero</option>
+                                    <select class="form-control select2" name="ID_CAT_ACADEMIC" id="academico" data-placeholder="Choose country">
+                                        <option  label="Elige el grado de formación"></option>
+                                      
 
                                     </select>
                                 </div>
@@ -398,11 +394,28 @@
                         type: "GET",
                         dataType: 'json',
                         success: function(result) {
-                            if (result.id == 200) {
-                                console.log(result);
-                                $('#success').text(result.messages.success);
+                            if (result.status == 200) {
+                       
+                                $('#success').text(result);
                                 $('#succes-alert').show();
                                  //reloadData();
+                                
+                                //console.log(result)
+                                
+                                let id = result["data"];
+                                //console.log(id)
+                
+                                
+                                let academico = document.getElementById("academico")
+                                
+                                for (i=0; i <= id.length; i++){
+                                    var option = document.createElement("option");
+                                    option.innerHTML = id[i].ACADEMIC_FORMATION;
+                                    option.value =id[i].ID;
+                                    academico.appendChild(option);
+                                }
+                               
+                                
                               
                              
                             } else {
