@@ -341,51 +341,89 @@
         <script src="../../assets/lib/select2/js/select2.min.js"></script>
 
         <script>
-
-        
-            sendFormDel();
-
             
-
-            function sendFormDel() {
-                $(document).on('click', '#send', function() {
-                    $('#loader').toggle();
-                    var url_str = '<?=base_url().'/Hcv_Rest_marital_Status/delete'?>';
-                    var Form = $("#ficha_description").serializeArray();
-                    var FormObject = {};
-                    $.each(Form,
-                        function(i, v) {
-                            FormObject[v.name] = v.value;
-                        }
-                    );
+            datacp();
+            data_academic();
+            function datacp() {
+    
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
+                
+                    var cp = {
+                        "search" : "55070",
+                        "limit" : "10",
+                        "offset": "0"
+                        
+                    };
+                
+          
+        
                     $.ajax({
                         url: url_str,
                         type: "POST",
                         dataType: 'json',
-                        data: JSON.stringify(FormObject),
+                        data: JSON.stringify(cp),
                         success: function(result) {
                             if (result.status == 200) {
                                 console.log(result);
                                 $('#success').text(result.messages.success);
                                 $('#succes-alert').show();
-                                reloadData();
+                                 //reloadData();
+                              
+                             
                             } else {
                                 $('#error').text(result.error);
                                 $('#error-alert').show();
                             }
-                            $('#loader').toggle();
-                            $('#modal_delete').modal('toggle');
+                            //$('#loader').toggle();
+                        
                         },
                         error: function(xhr, resp, text) {
                             console.log(xhr, resp, text);
                             $('#loader').toggle();
                             $('#error-alert').show();
                             $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-                            $('#modal_delete').modal('toggle');
+                         
                         }
                     })
-                });
+               
             }
+            
+            function data_academic() {
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
+                
+                    $.ajax({
+                        url: url_str,
+                        type: "GET",
+                        dataType: 'json',
+                        success: function(result) {
+                            if (result.id == 200) {
+                                console.log(result);
+                                $('#success').text(result.messages.success);
+                                $('#succes-alert').show();
+                                 //reloadData();
+                              
+                             
+                            } else {
+                                $('#error').text(result.error);
+                                $('#error-alert').show();
+                            }
+                            //$('#loader').toggle();
+                        
+                        },
+                        error: function(xhr, resp, text) {
+                            console.log(xhr, resp, text);
+                            $('#loader').toggle();
+                            $('#error-alert').show();
+                            $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+                         
+                        }
+                    })
+               
+            }
+            
+        
 
 
             $(document).on('click', '.btn-danger', function() {
@@ -403,7 +441,7 @@
 
             function reloadData() {
                 $('#loader').toggle();
-                dataTable.ajax.reload();
+                sendFormDel.ajax.reload();
                 $('#loader').toggle();
             }
 
@@ -439,4 +477,10 @@
                     }
                 })
             });
+            
+
         </script>
+        
+       
+      
+     
