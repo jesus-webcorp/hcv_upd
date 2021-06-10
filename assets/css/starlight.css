@@ -126,7 +126,7 @@ body {
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #868ba1;
+  color: #111;
   background-color: #D8DCE3;
 }
 
@@ -1516,7 +1516,7 @@ pre code {
   background-color: #fff;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.95);
   border-radius: 3px;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
