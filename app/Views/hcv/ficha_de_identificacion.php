@@ -73,12 +73,8 @@
                             <div class="row">
                                 <label class="col-sm-4 form-control-label">Nacionalidad: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="nacionalidad" data-placeholder="Choose country">
-                                        <option label="Elige tu nacionalidad"></option>
-                                        <option value="USA">United States of America</option>
-                                        <option value="UK">United Kingdom</option>
-                                        <option value="China">China</option>
-                                        <option value="Japan">Japan</option>
+                                    <select class="form-control select2" id="nacionalidad" name="nacionalidad" data-placeholder="Choose country">
+                                   
                                     </select>
                                 </div>
                             </div><!-- row -->
@@ -222,9 +218,9 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Formación Academica: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="ID_CAT_ACADEMIC" data-placeholder="Choose country">
-                                        <option label="Elige el grado de formación"></option>
-                                        <option value="Cisgenero">Cisgenero</option>
+                                    <select class="form-control select2" name="ID_CAT_ACADEMIC" id="academico" data-placeholder="Choose country">
+                                        <option  label="Elige el grado de formación"></option>
+                                      
 
                                     </select>
                                 </div>
@@ -341,51 +337,108 @@
         <script src="../../assets/lib/select2/js/select2.min.js"></script>
 
         <script>
-
-        
-            sendFormDel();
-
             
-
-            function sendFormDel() {
-                $(document).on('click', '#send', function() {
-                    $('#loader').toggle();
-                    var url_str = '<?=base_url().'/Hcv_Rest_marital_Status/delete'?>';
-                    var Form = $("#ficha_description").serializeArray();
-                    var FormObject = {};
-                    $.each(Form,
-                        function(i, v) {
-                            FormObject[v.name] = v.value;
-                        }
-                    );
+            datacp();
+            data_academic();
+            function datacp() {
+    
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
+                
+                    var cp = {
+                        "search" : "55070",
+                        "limit" : "10",
+                        "offset": "0"
+                        
+                    };
+                
+          
+        
                     $.ajax({
                         url: url_str,
                         type: "POST",
                         dataType: 'json',
-                        data: JSON.stringify(FormObject),
+                        data: JSON.stringify(cp),
                         success: function(result) {
                             if (result.status == 200) {
                                 console.log(result);
                                 $('#success').text(result.messages.success);
                                 $('#succes-alert').show();
-                                reloadData();
+                                 //reloadData();
+                              
+                             
                             } else {
                                 $('#error').text(result.error);
                                 $('#error-alert').show();
                             }
-                            $('#loader').toggle();
-                            $('#modal_delete').modal('toggle');
+                            //$('#loader').toggle();
+                        
                         },
                         error: function(xhr, resp, text) {
                             console.log(xhr, resp, text);
                             $('#loader').toggle();
                             $('#error-alert').show();
                             $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-                            $('#modal_delete').modal('toggle');
+                         
                         }
                     })
-                });
+               
             }
+            
+            function data_academic() {
+        
+                    var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
+                
+                    $.ajax({
+                        url: url_str,
+                        type: "GET",
+                        dataType: 'json',
+                        success: function(result) {
+                            if (result.status == 200) {
+                       
+                                $('#success').text(result);
+                                $('#succes-alert').show();
+                                 //reloadData();
+                                
+                              console.log(result)
+                                
+                                let id = result["data"]
+                                console.log(id[0].ID)
+                
+                                
+                                let academico = document.getElementById("academico")
+                                
+                               for (i=0; i <= id.length; i++){
+
+                
+                                   var option = document.createElement("option");
+                                    option.innerHTML = id[i].ACADEMIC_FORMATION;
+                                    option.value =id[i].ID;
+                                    academico.appendChild(option);
+                                }
+                               
+                                
+                              
+                             
+                            } else {
+                                $('#error').text(result.error);
+                                $('#error-alert').show();
+                            }
+                            //$('#loader').toggle();
+                        
+                        },
+                        error: function(xhr, resp, text) {
+                            console.log(xhr, resp, text);
+                            $('#loader').toggle();
+                            $('#error-alert').show();
+                            $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+                         
+                        }
+                    })
+               
+            }
+            
+        
 
 
             $(document).on('click', '.btn-danger', function() {
@@ -403,7 +456,7 @@
 
             function reloadData() {
                 $('#loader').toggle();
-                dataTable.ajax.reload();
+                sendFormDel.ajax.reload();
                 $('#loader').toggle();
             }
 
@@ -439,4 +492,10 @@
                     }
                 })
             });
+            
+
         </script>
+        
+       
+      
+     

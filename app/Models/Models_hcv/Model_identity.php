@@ -15,6 +15,11 @@ class Model_identity extends Model
         return $result->getResult();
     }
 
+    public function getIdentityfull($id){
+        $fullJoinQuery = "SELECT hcv_identity.* , hcv_cat_marital_status.name as MARITAL_STATUS FROM hcv_identity , hcv_cat_marital_status WHERE hcv_identity.ID_CAT_MARITAL_STATUS = hcv_cat_marital_status.id and hcv_identity.id = $id";
+        $result = $this->db->query($fullJoinQuery);
+        return $result->getResult();
+    }
 
 }
 
