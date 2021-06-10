@@ -400,16 +400,18 @@
                                 $('#succes-alert').show();
                                  //reloadData();
                                 
-                                //console.log(result)
+                              console.log(result)
                                 
-                                let id = result["data"];
-                                //console.log(id)
+                                let id = result["data"]
+                                console.log(id[0].ID)
                 
                                 
                                 let academico = document.getElementById("academico")
                                 
-                                for (i=0; i <= id.length; i++){
-                                    var option = document.createElement("option");
+                               for (i=0; i <= id.length; i++){
+
+                
+                                   var option = document.createElement("option");
                                     option.innerHTML = id[i].ACADEMIC_FORMATION;
                                     option.value =id[i].ID;
                                     academico.appendChild(option);
