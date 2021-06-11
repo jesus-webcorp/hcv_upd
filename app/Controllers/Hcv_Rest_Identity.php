@@ -11,7 +11,7 @@ class Hcv_Rest_Identity extends ResourceController
     public function index(){
       $model = model('App\Models\Models_hcv\Model_identity');
       $json = $this->request->getJSON();
-      $id = $json->id;
+      $id = $json->ID;
       $data['data'] = $model->getIdentityfull($id);
       return $this->respond($data);
     }
