@@ -1,6 +1,7 @@
 <script src="<?=base_url()?>/../../assets/lib/jquery/jquery.js"></script>
 <script src="<?=base_url()?>/../../assets/lib/jquery-ui/jquery-ui.js"></script>
 
+
 <link href="../../assets/lib/datatables/jquery.dataTables.css" rel="stylesheet">
 <link href="../../assets/lib/select2/css/select2.min.css" rel="stylesheet">
 <link href="../../assets/lib/SpinKit/spinkit.css" rel="stylesheet">
@@ -17,6 +18,67 @@
         </div>
     </div>
 </div>
+
+<style>
+   .clear {
+        clear: both !important;
+        margin-top: 20px !important;
+    }
+
+    #searchResult {
+        list-style: none !important;
+        padding: 0px !important;
+        width: 250px !important;
+        position: absolute !important;
+        margin-top: 39px;
+        min-width: 100%;
+        z-index:99999999999999999999999999999999999999999;
+    }
+
+    #searchResult li {
+        background: lavender !important;
+        padding: 4px !important;
+        margin-bottom: 1px !important;
+    }
+
+    #searchResult li:nth-child(even) {
+        background: #45506B !important;
+        color: white !important;
+    }
+
+    #searchResult li:hover {
+        cursor: pointer !important;
+    }
+    
+    /* ############  CP SEARCH ############### */
+    
+        #cpResult {
+         list-style: none !important;
+        padding: 0px !important;
+        width: 250px !important;
+        position: absolute !important;
+        margin-top: 39px;
+        min-width: 100%;
+        z-index:99999999999999999999999999999999999999999;
+    }
+
+    #cpResult li {
+        background: lavender !important;
+        padding: 4px !important;
+        margin-bottom: 1px !important;
+    }
+
+    #cpResult li:nth-child(even) {
+        background: #45506B !important;
+        color: white !important;
+    }
+
+    #cpResult li:hover {
+        cursor: pointer !important;
+    }
+    
+    
+</style>
 
 <!-- ########## START: MAIN PANEL ########## -->
 <div class="sl-mainpanel">
@@ -73,8 +135,10 @@
                             <div class="row">
                                 <label class="col-sm-4 form-control-label">Nacionalidad: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" id="nacionalidad" name="nacionalidad" data-placeholder="Choose country">
-                                   
+                                    <select class="form-control select2" id="nacionalidad" name="ID_CAT_NATIONALITY" data-placeholder="Choose country">
+                                    <option value="ninguna" >Elige tu nacionalidad</option>
+                                    <option value="Mexico" > Mexico</option>
+
                                     </select>
                                 </div>
                             </div><!-- row -->
@@ -133,7 +197,9 @@
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon ion-search tx-16 lh-0 op-6"></i></span>
-                                        <input type="text" name="ZIP_CODE" class="form-control " placeholder="">
+                                        <input type="text" name="ZIP_CODE" id="cp_search" class="form-control " placeholder="">
+                                        <ul id="cpResult"></ul>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
@@ -141,14 +207,14 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Delegación o Municipío: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <input type="text" name="ID_CAT_MUNICIPALITY" class="form-control" placeholder="">
+                                    <input type="text" id="delegacion" name="ID_CAT_MUNICIPALITY" class="form-control" placeholder="">
                                 </div>
                             </div>
 
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Estado: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <input type="text" name="ID_CAT_STATE_OF_RESIDENCE" class="form-control" placeholder="">
+                                    <input type="text" id="estado" name="ID_CAT_STATE_OF_RESIDENCE" class="form-control" placeholder="">
                                 </div>
                             </div>
 
@@ -156,7 +222,7 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Colonia: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <input type="text" name="ID_CAT_TOWN" class="form-control" placeholder="">
+                                    <input type="text" id="colonia" name="TOWN" class="form-control" placeholder="">
                                 </div>
                             </div>
 
@@ -208,8 +274,8 @@
                                 <label class="col-sm-4 form-control-label">Lugar de nacimiento: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <select class="form-control select2" name="BIRTHPLACE" data-placeholder="Choose country">
-                                        <option label="Elige tu lugar de nacimiento"></option>
-                                        <option value="Otro">Otro</option>
+                                        <option value="ninguna">Elige tu lugar de nacimiento</option>
+                                        <option value="Ecatepec">Ecatepec</option>
 
                                     </select>
                                 </div>
@@ -219,8 +285,8 @@
                                 <label class="col-sm-4 form-control-label">Formación Academica: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <select class="form-control select2" name="ID_CAT_ACADEMIC" id="academico" data-placeholder="Choose country">
-                                        <option  label="Elige el grado de formación"></option>
-                                      
+                                        <option label=""></option>
+
 
                                     </select>
                                 </div>
@@ -278,14 +344,17 @@
 
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">¿Hablas alguna lengua indígena? </label>
-                                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="ANSWER_INDIGENOUS_LENGUAGE"  data-placeholder="Choose country">
-                                        <option label="En caso de que si elige una"></option>
-                                        <option value="Católica">Católica</option>
+                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                               <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon ion-search tx-16 lh-0 op-6"></i></span>
+                                        <input type="text" name="ID_CAT_INDIGENOUS_LENGUAGE" id="txt_search" class="form-control " placeholder="">
+                                        <ul id="searchResult"></ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                 
+                             </div>
 
-
-                                    </select>
-                                </div>
+                           
                             </div>
 
 
@@ -302,7 +371,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="row mg-t-20" id="otherinfo">
                                 <label class="col-sm-4 form-control-label">Otro: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
@@ -323,11 +392,11 @@
 
 
 
-            
-                            <div class="form-layout-footer mg-t-30">
-                                <button class="btn btn-info mg-r-5" id="send">Enviar</button>
-                                <button class="btn btn-secondary">Cancel</button>
-                            </div><!-- form-layout-footer -->
+
+            <div class="form-layout-footer mg-t-30">
+                <button class="btn btn-info mg-r-5" id="send">Enviar</button>
+                <button class="btn btn-secondary">Cancel</button>
+            </div><!-- form-layout-footer -->
 
         </div><!-- card -->
 
@@ -337,108 +406,197 @@
         <script src="../../assets/lib/select2/js/select2.min.js"></script>
 
         <script>
-            
-            datacp();
-            data_academic();
-            function datacp() {
     
-        
-                    var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
-                
-                    var cp = {
-                        "search" : "55070",
-                        "limit" : "10",
-                        "offset": "0"
-                        
-                    };
-                
-          
-        
-                    $.ajax({
-                        url: url_str,
-                        type: "POST",
-                        dataType: 'json',
-                        data: JSON.stringify(cp),
-                        success: function(result) {
-                            if (result.status == 200) {
-                                console.log(result);
-                                $('#success').text(result.messages.success);
-                                $('#succes-alert').show();
-                                 //reloadData();
-                              
-                             
-                            } else {
-                                $('#error').text(result.error);
-                                $('#error-alert').show();
-                            }
-                            //$('#loader').toggle();
-                        
-                        },
-                        error: function(xhr, resp, text) {
-                            console.log(xhr, resp, text);
-                            $('#loader').toggle();
-                            $('#error-alert').show();
-                            $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-                         
-                        }
-                    })
-               
-            }
-            
-            function data_academic() {
-        
-                    var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
-                
-                    $.ajax({
-                        url: url_str,
-                        type: "GET",
-                        dataType: 'json',
-                        success: function(result) {
-                            if (result.status == 200) {
-                       
-                                $('#success').text(result);
-                                $('#succes-alert').show();
-                                 //reloadData();
-                                
-                              console.log(result)
-                                
-                                let id = result["data"]
-                                console.log(id[0].ID)
-                
-                                
-                                let academico = document.getElementById("academico")
-                                
-                               for (i=0; i <= id.length; i++){
+            data_academic();
 
-                
+    
+            function data_academic() {
+
+                var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
+
+                $.ajax({
+                    url: url_str,
+                    type: "GET",
+                    dataType: 'json',
+                    success: function(result) {
+                        if (result.status == 200) {
+
+                            $('#success').text(result);
+                            $('#succes-alert').show();
+                            //reloadData();
+
+                            console.log(result)
+
+                            let id = result.data
+                            let data_length = id.length
+        
+                            let academico = document.getElementById("academico")
+
+                             for (i=0; i <= data_length; i++){
+
+                                
                                    var option = document.createElement("option");
                                     option.innerHTML = id[i].ACADEMIC_FORMATION;
                                     option.value =id[i].ID;
                                     academico.appendChild(option);
                                 }
-                               
-                                
-                              
-                             
-                            } else {
-                                $('#error').text(result.error);
-                                $('#error-alert').show();
-                            }
-                            //$('#loader').toggle();
-                        
-                        },
-                        error: function(xhr, resp, text) {
-                            console.log(xhr, resp, text);
-                            $('#loader').toggle();
+                            
+
+
+                        } else {
+                            $('#error').text(result.error);
                             $('#error-alert').show();
-                            $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-                         
                         }
-                    })
-               
+                        //$('#loader').toggle();
+
+                    },
+                    error: function(xhr, resp, text) {
+                        console.log(xhr, resp, text);
+                        $('#loader').toggle();
+                        $('#error-alert').show();
+                        $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+
+                    }
+                })
+
             }
+
+            $(document).ready(function() {
+
+                $("#txt_search").keyup(function() {
+                    var search = document.getElementById("txt_search").value;
+                    
+                    var searchresult = document.getElementById("searchResult");
+                    
+                    
+
+                    var url_str = '<?=base_url().'/Hcv_Rest_Indigenous_L'?>';
+                    
+                    
+                    if (search >= 3){
+                        
+                    
+                    var language = {
+                        "search": search,
+                        "limit": "10",
+                        "offset": "0",
+                        "debug": true
+                        
+                        
+
+                    };
+                        
+                    }
+
+
+
+                    if (search != "" ) {
+
+                        $.ajax({
+                            url: url_str,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: JSON.stringify(language),
+                            success: function(response) {
+                                let info = response.data;
+                                var len = info.length;
+                                $("#searchResult").empty();
+                                for (var i = 0; i < len; i++) {
+                                    var id = info[i].ID;
+                                    var name = info[i].SCIENTIFIC_NAME;
+                                    console.log("searchResult")
+
+                                $("#searchResult").append("<li value='" + id + "'>" + name + "</li>");
+
+
+                                }
+
+
+                                // binding click event to li
+                                $("#searchResult li").bind("click", function() {
+                                    var value = $(this).text();
+                                    $("#txt_search").val(value);
+                                    $("#searchResult").empty();
+                                });
+                            }
+                        });
+                    }
+
+                });
+            });
             
-        
+            
+            $(document).ready(function() {
+                
+                        let colonia;
+                        let alcaldia;
+                        let estado;
+
+                $("#cp_search").keyup(function() {
+                    var search = document.getElementById("cp_search").value;
+                    
+                    var searchresult = document.getElementById("searchResult");
+                    
+                    
+
+                    var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
+
+                    var cp = {
+                        "search": search,
+                        "limit": "10",
+                        "offset": "0"
+
+                    };
+                    
+                
+
+
+
+                    if (search != "" ) {
+                        
+                      
+
+                        $.ajax({
+                            url: url_str,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: JSON.stringify(cp),
+                            success: function(response) {
+                   
+                                console.log(response)
+                                let info = response.data;
+                                var len = info.length;
+                                $("#cpResult").empty();
+                                for (var i = 0; i < len; i++) {
+                                    var id = info[i].ID;
+                                    var cp = info[i].CP;
+                                     colonia = info[i].ASENTAMIENTO;
+                                     alcaldia = info[i].MUNICIPIO;
+                                     estado = info[i].ESTADO;
+                                     console.log("searchResult")
+
+                                $("#cpResult").append("<li value='" + id + "'>" + cp + ", " + colonia +  "</li>");
+                                
+
+                                }
+
+
+                                // binding click event to li
+                                $("#cpResult li").bind("click", function() {
+                                    var value = $(this).text();
+                                    $("#cp_search").val(value);
+                                    $("#cpResult").empty();
+                                    $("#delegacion").val(alcadia);
+                                });
+                            }
+                        });
+                    }
+
+                });
+            });
+
+
+
 
 
             $(document).on('click', '.btn-danger', function() {
@@ -482,7 +640,7 @@
                     }
                 })
             });
-            
+
             $(document).ready(function() {
                 $('#info').change(function(e) {
                     if ($(this).val() === "Otro") {
@@ -492,10 +650,4 @@
                     }
                 })
             });
-            
-
         </script>
-        
-       
-      
-     
