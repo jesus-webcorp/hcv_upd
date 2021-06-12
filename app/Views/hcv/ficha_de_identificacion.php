@@ -347,7 +347,7 @@
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                <div class="input-group">
                                         <span class="input-group-addon"><i class="icon ion-search tx-16 lh-0 op-6"></i></span>
-                                        <input type="text" name="ID_CAT_INDIGENOUS_LENGUAGE" id="txt_search" class="form-control " placeholder="">
+                                        <input type="text" name="ID_CAT_INDIGENOUS_LENGUAGE" id="pepe" class="form-control " placeholder="">
                                         <ul id="searchResult"></ul>
                                         <div class="clear"></div>
                                     </div>
@@ -407,10 +407,10 @@
 
         <script>
     
-            data_academic();
+           data_academic();
 
     
-            function data_academic() {
+          function data_academic() {
 
                 var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
 
@@ -425,12 +425,12 @@
                             $('#succes-alert').show();
                             //reloadData();
 
-                            console.log(result)
-
                             let id = result.data
                             let data_length = id.length
         
                             let academico = document.getElementById("academico")
+                            
+                            console.log(academico)
 
                              for (i=0; i <= data_length; i++){
 
@@ -459,90 +459,69 @@
                     }
                 })
 
-            }
+            } 
 
             $(document).ready(function() {
 
-                $("#txt_search").keyup(function() {
-                    var search = document.getElementById("txt_search").value;
-                    
+                $("#pepe").keyup(function() {
+                    var search = document.getElementById("pepe").value;
+                    console.log('si es este: ' + search);
                     var searchresult = document.getElementById("searchResult");
-                    
-                    
-
                     var url_str = '<?=base_url().'/Hcv_Rest_Indigenous_L'?>';
-                    
-                    
-                    if (search >= 3){
-                        
-                    
                     var language = {
                         "search": search,
                         "limit": "10",
-                        "offset": "0",
-                        "debug": true
-                        
-                        
-
+                        "offset": "0"
+//                        "debug": "true"
                     };
-                        
-                    }
+                    console.log(language);
+                    $.ajax({
+                        url: url_str,
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(language),
+                        success: function(response) {
+                            let info = response.data;
+                            console.log(info);
+                            var len = info.length;
+                            $("#searchResult").empty();
+                            for (var i = 0; i < len; i++) {
+                                var id = info[i].ID;
+                                var name = info[i].SCIENTIFIC_NAME;
+                                console.log("searchResult")
+
+                            $("#searchResult").append("<li value='" + id + "'>" + name + "</li>");
 
 
-
-                    if (search != "" ) {
-
-                        $.ajax({
-                            url: url_str,
-                            type: 'POST',
-                            dataType: 'json',
-                            data: JSON.stringify(language),
-                            success: function(response) {
-                                let info = response.data;
-                                var len = info.length;
-                                $("#searchResult").empty();
-                                for (var i = 0; i < len; i++) {
-                                    var id = info[i].ID;
-                                    var name = info[i].SCIENTIFIC_NAME;
-                                    console.log("searchResult")
-
-                                $("#searchResult").append("<li value='" + id + "'>" + name + "</li>");
-
-
-                                }
-
-
-                                // binding click event to li
-                                $("#searchResult li").bind("click", function() {
-                                    var value = $(this).text();
-                                    $("#txt_search").val(value);
-                                    $("#searchResult").empty();
-                                });
                             }
-                        });
-                    }
 
+
+                            // binding click event to li
+                            $("#searchResult li").bind("click", function() {
+                                var value = $(this).text();
+                                $("#pepe").val(value);
+                                $("#searchResult").empty();
+                            });
+                        }
+                    });
                 });
             });
             
             
-            $(document).ready(function() {
+           $(document).ready(function() {
                 
-                        let colonia;
-                        let alcaldia;
-                        let estado;
-
+                   
                 $("#cp_search").keyup(function() {
-                    var search = document.getElementById("cp_search").value;
+                    var search2 = document.getElementById("cp_search").value;
                     
-                    var searchresult = document.getElementById("searchResult");
+                    var searchresult2 = document.getElementById("searchResult");
                     
                     
 
                     var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
 
                     var cp = {
-                        "search": search,
+                        "search": search2,
                         "limit": "10",
                         "offset": "0"
 
@@ -552,7 +531,7 @@
 
 
 
-                    if (search != "" ) {
+                    if (search2 != "" ) {
                         
                       
 
@@ -570,10 +549,10 @@
                                 for (var i = 0; i < len; i++) {
                                     var id = info[i].ID;
                                     var cp = info[i].CP;
-                                     colonia = info[i].ASENTAMIENTO;
-                                     alcaldia = info[i].MUNICIPIO;
-                                     estado = info[i].ESTADO;
-                                     console.log("searchResult")
+                                    let colonia = info[i].ASENTAMIENTO;
+                                    let alcaldia = info[i].MUNICIPIO;
+                                    let estado = info[i].ESTADO;
+                                     console.log("searchResult2")
 
                                 $("#cpResult").append("<li value='" + id + "'>" + cp + ", " + colonia +  "</li>");
                                 
@@ -586,7 +565,7 @@
                                     var value = $(this).text();
                                     $("#cp_search").val(value);
                                     $("#cpResult").empty();
-                                    $("#delegacion").val(alcadia);
+                               
                                 });
                             }
                         });
@@ -594,7 +573,6 @@
 
                 });
             });
-
 
 
 
