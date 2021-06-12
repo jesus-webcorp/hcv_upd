@@ -66,6 +66,34 @@
                         border: 1px solid #ccc;
                         border-top: none;
                         }
+                        /*Estilos al boton de subir archivo*/
+                        label[for="evidencias"] {
+                           font-size: 1rem;
+                           color: #fff;
+                           background-color: #106BA0;
+                           display: inline-block;
+                           -webkit-transition: all .5s;
+                           transition: all .5s;
+                           cursor: pointer;
+                           padding: .3rem 1.5rem !important;
+                           width: -webkit-fit-content;
+                           width: -moz-fit-content;
+                           width: fit-content;
+                           text-align: center;
+                           border-radius: .25rem;
+                        }
+                        input[type="file"]#evidencias {
+                           width: 0.1px;
+                           height: 0.1px;
+                           opacity: 0;
+                           overflow: hidden;
+                           position: absolute;
+                           z-index: -1;
+                        }
+                        .border{
+                            border: 1px solid black !important;
+                            padding: 10px;
+                        }
                         </style>
                         <div class="row">
                             <div class="col-lg-12">
@@ -74,7 +102,7 @@
                                     <button class="tablinks" onclick="openCity(event, 'Notas')" id="defaultOpen">Signos Vitales Notas y Diagnostico Medico</button>
                                     <button class="tablinks" onclick="openCity(event, 'Nutricion')">Nutrición</button>
                                     <button class="tablinks" onclick="openCity(event, 'Psicologia')">Psicología</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Evidecias')">Evidencias</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Evidencias')">Evidencias</button>
                                     <button class="tablinks" onclick="openCity(event, 'Diagnostico_nut')">Diag. Nut</button>
                                     <button class="tablinks" onclick="openCity(event, 'Indicaciones')">Med e Indicaciones</button>
                                     
@@ -162,25 +190,23 @@
                                                         <h4 class="text-center">
                                                             Nota General
                                                         </h4>
-                                                        <p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Debitis minus, quaerat cum eius aliquid obcaecati exercitationem veniam consequatur recusandae hic delectus veritatis mollitia corrupti eum atque ab molestias, possimus consequuntur. Quaerat animi odio illo blanditiis iusto eaque aut laudantium, sint nulla voluptatem vero deserunt quas. Sapiente in deleniti quasi, nobis?</p>
+                                                        <p class="border">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Debitis minus, quaerat cum eius aliquid obcaecati exercitationem veniam consequatur recusandae hic delectus veritatis mollitia corrupti eum atque ab molestias, possimus consequuntur. Quaerat animi odio illo blanditiis iusto eaque aut laudantium, sint nulla voluptatem vero deserunt quas. Sapiente in deleniti quasi, nobis?</p>
                                                     </div><!--/.col-lg-8-->
                                                     <div class="col-12">
-                                                        <div class="jumbotron">
-                                                            <select class="custom-select" name="Enfermedad" id="enfermedad"  
-                                                         >
-                                                            <!--option selected disabled>PREDICTIVO DE NOMBRE</option-->
-                                                            <option data-tokens="HEMORROIDES - PERIODO PERINATAL" value="HEMORROIDES - PERIODO PERINATAL">HEMORROIDES - PERIODO PERINATAL</option>
-                                                            <option data-tokens="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS" value="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS">HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS</option>
-                                                            <option data-tokens="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO" value="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO">ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO"</option>
-                                                            <option data-tokens="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO" value="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO">EMBOLIA PULMONAR - SISTEMA CIRCULATORIO"</option>
-                                                            <option data-tokens="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO" value="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO">ESTENOSIS MITRAL - SISTEMA CIRCULATORIO CIRCULATORIO</option>
-                                                            <option data-tokens="INFARTO CEREBRAL - SISTEMA CIRCULATORIO" value="INFARTO CEREBRAL - SISTEMA CIRCULATORIO">INFARTO CEREBRAL - SISTEMA CIRCULATORIO</option>
-                                                        </select>
-                                                        </div>
-                                                         
+                                                        <select class="custom-select" name="Enfermedad" id="enfermedad"  
+                                                     >
+                                                        <!--option selected disabled>PREDICTIVO DE NOMBRE</option-->
+                                                        <option data-tokens="HEMORROIDES - PERIODO PERINATAL" value="HEMORROIDES - PERIODO PERINATAL">HEMORROIDES - PERIODO PERINATAL</option>
+                                                        <option data-tokens="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS" value="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS">HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS</option>
+                                                        <option data-tokens="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO" value="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO">ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO"</option>
+                                                        <option data-tokens="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO" value="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO">EMBOLIA PULMONAR - SISTEMA CIRCULATORIO"</option>
+                                                        <option data-tokens="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO" value="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO">ESTENOSIS MITRAL - SISTEMA CIRCULATORIO CIRCULATORIO</option>
+                                                        <option data-tokens="INFARTO CEREBRAL - SISTEMA CIRCULATORIO" value="INFARTO CEREBRAL - SISTEMA CIRCULATORIO">INFARTO CEREBRAL - SISTEMA CIRCULATORIO</option>
+                                                    </select>
+                                                        
                                                     </div>
                                                     <table class="table table-bordered table-responsive">
-                                                        <h4 class="text-center">Historial de diagnósticos</h4>
+                                                        <h4 class="text-center mt-3">Historial de diagnósticos</h4>
                                                         <thead>
                                                             <tr>
                                                                 <th scope="col">Enfermedad</th>
@@ -235,12 +261,82 @@
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">  
-                                                        <div class="col-lg-6">
+                                                        <div class="col-12">
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-2">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
+                                                            </div>  
                                                             
+                                                            <div class="form-group row">
+                                                                <label for="cintura" class="col-5 col-form-label text-right">Circ. Cintura (cm)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Cintura" class="form-control" id="cintura">
+                                                                </div>
+                                                            </div> 
+                                                            <div class="form-group row">
+                                                                <label for="cadera" class="col-5 col-form-label text-right">Circ. Cadera (cm)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Cadera" class="form-control" id="cadera">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="pantorrilla" class="col-5 col-form-label text-right">Circ. Pantorrilla (cm)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Pantorrilla" class="form-control" id="pantorrilla">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="masa_muscular" class="col-5 col-form-label text-right">% de masa Muscular (%)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Masa_muscular" class="form-control" id="masa_muscular">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="grasa_corporal" class="col-5 col-form-label text-right">% de grasa corporal (%)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Grasa_corporal" class="form-control" id="grasa_corporal">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="grasa_visceral" class="col-5 col-form-label text-right">% de grasa Visceral (%)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Grasa_visceral" class="form-control" id="grasa_visceral">
+                                                                </div>
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
-                                                        <div class="col-lg-6">
+                                                        
                                                             
-                                                        </div><!--/.col-lg-6-->
+                                                           
+                                                        <div class="form-group row">
+                                                            <label for="agua_corporal" class="col-5 col-form-label text-right">% Agua corporal total (%)</label>
+                                                            <div class="col-3">
+                                                                <input type="text" name="Agua_corporal" class="form-control" id="agua_corporal">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="tasa_metabolica" class="col-5 col-form-label text-right">Tasa Metabólica basal</label>
+                                                            <div class="col-3">
+                                                                <input type="text" name="Tasa_metabolica" class="form-control" id="tasa_metabolica">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="edad_metabolica" class="col-5 col-form-label text-right">Edad metabólica</label>
+                                                            <div class="col-3">
+                                                                <input type="text" name="Edad_metabolica" class="form-control" id="edad_metabolica">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                        
                                                     </div><!--/.row-->
                                                     <div class="float-right">
                                                         <button type="submit" name="guardar_nutricion" class="btn btn-primary mb-2 text-right">Guardar</button> 
@@ -255,24 +351,58 @@
                                 =            Psicología          =
                                 ======================================-->
                                 <div id="Psicologia" class="tabcontent">
-                                    <h4 class="text-center mt-2">Habitos alimenticios</h4>
-
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-lg-4">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                            </div>   
+                                                            <div class="form-group row">
+                                                                <label for="metodo_intervencion" class="col-6 col-form-label text-right">Técnica/método de intervención</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Metodo_intervencion" class="form-control" id="metodo_intervencion">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="tipo_abordaje" class="col-6 col-form-label text-right">Tipo de Abordaje</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Tipo_abordaje" class="form-control" id="tipo_abordaje">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="estado_emocional" class="col-6 col-form-label text-right">Estado Emocional</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Estado_emocional" class="form-control" id="estado_emocional">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="objetivo_consulta" class="col-6 col-form-label text-right">Objetivo de la consulta</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Objetivo_consulta" class="form-control" id="objetivo_consulta">
+                                                                </div>
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
 
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="mt-2">
+                                                                <p>Tipo de Nota</p>
+                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
                                                     </div><!--/.row-->
                                                     
                                                     <div class="float-right">
-                                                        <button type="submit" name="guardar_nutricionales " class="btn btn-primary mb-2 text-right">Guardar</button> 
+                                                        <button type="submit" name="guardar_psicologia" class="btn btn-primary mb-2 text-right">Guardar</button> 
                                                     </div>
                                                 </form>
                                             </div><!--/.col-12-->
@@ -284,21 +414,88 @@
                                 =            Evidencias          =
                                 ======================================-->
                                 <div id="Evidencias" class="tabcontent">
-                                    <h3 class="text-danger text-center h4">Exclusivo mujeres</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-lg-4">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                            </div> 
+                                                            <div class="text-md-right">
+                                                                <label for="evidencias">Subir archivo<i class="fa fa-paperclip pl-2"></i></label>
+                                                                <input type="file" name="foto" class="form-control-file btn" id="evidencias">
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="mt-2">
+                                                                <p>Tipo de Nota</p>
+                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
+                                                        <div class="col-12 mt-3">
+                                                            <h6 class="text-center">Historial de Archivos Subidos</h6>
+                                                            <table class="table table-bordered table-responsive">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Operativo</th>
+                                                                        <th scope="col">Fecha </th>
+                                                                        <th scope="col">Hora</th>
+                                                                        <th scope="col">
+                                                                            Descripcion
+                                                                        </th>
+                                                                        <th scope="col">
+                                                                           
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Nombre de Operativo</td>
+                                                                        <td>20/02/2021</td>
+                                                                        <td>16:45</td>
+                                                                        <td>
+                                                                            Foto
+                                                                        </td>
+                                                                        <td><a href="">Ver</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Nombre de Operativo</td>
+                                                                        <td>20/02/2021</td>
+                                                                        <td>16:45</td>
+                                                                        <td>Radiografia</td>
+                                                                        <td><a href="">Ver</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Nombre de Operativo</td>
+                                                                        <td>20/02/2021</td>
+                                                                        <td>16:45</td>
+                                                                        <td>Estudios de Laboratorio</td>
+                                                                        <td><a href="">Ver</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Nombre de Operativo</td>
+                                                                        <td>20/02/2021</td>
+                                                                        <td>16:45</td>
+                                                                        <td>Foto</td>
+                                                                        <td>
+                                                                            <a href="">Ver</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>  
                                                     <div class="float-right">
-                                                        <button type="submit" name="guardar_gineco" class="btn btn-primary mb-2 text-right">Guardar</button> 
+                                                        <button type="submit" name="guardar_evidencias" class="btn btn-primary mb-2 text-right">Guardar</button> 
                                                     </div>    
                                                 </form>
                                             </div><!--col-lg-6-->
@@ -310,18 +507,97 @@
                                 =            Diag. Nut          =
                                 ======================================-->
                                 <div id="Diagnostico_nut" class="tabcontent">
-                                    <h3 class="h5 text-danger text-center">Exclusivo hombres</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                               
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-lg-4">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                            </div>    
                                                         </div><!--/.col-lg-6-->
                                                         <div class="col-lg-6">
-                                                        
+                                                             <div class="mt-2">
+                                                                <p>Tipo de Nota</p>
+                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                            </div>
                                                         </div><!--/.col-lg-6-->
+                                                        <div class="col-4 mt-3">
+                                                            <select class="custom-select mr-sm-5" name="diagnostico" id="diagnostico">
+                                                                <option value="Ingesta (NI)">Ingesta (NI)</option>
+                                                                <option value="Clinical (NC)">Clinical (NC)</option>
+                                                                <option value="Comportamiento ambiental (NB)">Comportamiento ambiental (NB)</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4 mt-3">
+                                                             <select class="custom-select mr-sm-5" name="ingesta" id="ingesta">
+                                                                <option value="Balance Calórico/energético (1)">Balance Calórico/energético (1)</option>
+                                                                <option value="Ingesta oral o del soporte nutricional">Ingesta oral o del soporte nutricional</option>
+                                                                <option value="Ingesta de líquidos (3)">Ingesta de líquidos (3)</option>
+                                                                <option value="Ingesta de sustancias bioactiva">Ingesta de sustancias bioactiva</option>
+                                                                <option value="Ingesta de nutrientes (5)">Ingesta de nutrientes (5)</option>
+                                                                <option value="Funcional (1)">Funcional (1)</option>
+                                                                <option value="Bioquimica (2)">Bioquimica (2)</option>
+                                                                <option value="Peso (3)">Peso (3)</option>
+                                                                <option value="Conocimientos y creencias (1)">Conocimientos y creencias (1)</option>
+                                                                <option value="Actividad física y funcionalidad">Actividad física y funcionalidad</option>
+                                                                <option value="Acceso a alimentos y seguridad">Acceso a alimentos y seguridad</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4 mt-3">
+                                                            <select class="custom-select mr-sm-5" name="alimentacion" id="alimentacion">
+                                                                <option value="Grasa y colesterol">Grasa y colesterol</option>
+                                                                <option value="Proteína">Proteína</option>
+                                                                <option value="Hidratos de carbono y fibra">Hidratos de carbono y fibra</option>
+                                                                <option value="Vitaminas">Vitaminas</option>
+                                                                <option value="Minerales">Minerales</option>
+                                                                <option value="Multi-nutrientes">Multi-nutrientes</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-5 mt-3">
+                                                            <select class="custom-select mr-sm-5" name="ingestas" id="ingestas">
+                                                                <option value="Ingesta insuficiente de fibra">Ingesta insuficiente de fibra</option>
+                                                                <option value="Ingesta excesiva de fibra">Ingesta excesiva de fibra</option>
+                                                                <option value="Ingesta insuficiente de Vitamina">Ingesta insuficiente de Vitamina</option>
+                                                                <option value="Ingesta excesiva de vitaminas">Ingesta excesiva de vitaminas</option>
+                                                                <option value="Ingesta insuficiente de minerales">Ingesta insuficiente de minerales</option>
+                                                                <option value="Ingesta excesiva de minerales">Ingesta excesiva de minerales</option>
+                                                                <option value="Riesgo futuro de ingesta subópt">Riesgo futuro de ingesta subópt</option>
+                                                                <option value="Riesgo futuro de ingesta excesi">Riesgo futuro de ingesta excesi</option>
+                                                            </select> <br>
+                                                            <button type="submit" name="Agregar_ingesta" class="btn btn-primary mt-2 text-left">Agregar</button>
+                                                        </div>
+                                                        <div class="col-lg-5 mt-3">
+                                                            <table class="table table-bordered table-responsive">  
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Diagnóstico</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Déficit en el automonitoreo</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Desorden en el Patrón alimentario</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Adhesión limitada a recomendaciones relacionadas con la nutrición</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Selección de alimentos indeseable</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>  
                                                     <div class="float-right">
                                                         <button type="submit" name="guardar_androgenicos" class="btn btn-primary mb-2 text-right">Guardar</button> 
@@ -336,22 +612,101 @@
                                 =            Med e Indicaciones         =
                                 ======================================-->
                                 <div id="Indicaciones" class="tabcontent">
-                                    <h3 class="h5 text-danger text-center">Exclusivo menores de 5 años</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-lg-4">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                            </div> 
                                                         </div><!--col-lg-6-->
 
                                                         <div class="col-lg-6">
-                                                            
+                                                            <div class="mt-2">
+                                                                <p>Tipo de Nota</p>
+                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                            </div>
                                                         </div> <!--col-lg-6-->
+                                                        <div class="col-lg-4">
+                                                            <select class="custom-select mr-sm-5" name="sustancia" id="sustancia">
+                                                                <option selected disabled value="Sustancia Activa">Sustancia Activa</option>
+                                                                <option value="Parasetamol">Parasetamol</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <select class="custom-select mr-sm-5" name="presentacion" id="presentacion">
+                                                                <option selected disabled value="Presentación">Presentación</option>
+                                                                <option value="Tabletas 500 mg">Tabletas 500 mg</option>
+                                                                <option value="Suspensión 100 mg">Suspensión 100 mg</option>
+                                                                <option value="Cápsula 800 mg">Cápsula 800 mg</option>
+                                                                <option value="Inyecciones 10mg">Inyecciones 10mg</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-4 d-flex">
+                                                            <textarea name="indicaciones" id="" cols="30" rows="2" placeholder="Indicaciones"></textarea>
+                                                            <button type="submit" name="Agregar_ingesta" class="btn btn-primary ml-2">Agregar</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <table class="table table-bordered table-responsive mt-3">  
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Medicamento</th>
+                                                                    <th scope="col">Presentación</th>
+                                                                    <th scope="col">Cantidad</th>
+                                                                    <th scope="col">Unidad</th>
+                                                                    <th scope="col">Indicaciones</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Parasetamol</td>
+                                                                    <td>Tabletas 500 mg</td>
+                                                                    <td>250</td>
+                                                                    <td>mg</td>
+                                                                    <td>Tomar c/6 horas</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td>Parasetamol</td>
+                                                                    <td>Suspensión 100 mg</td>
+                                                                    <td>100</td>
+                                                                    <td>ml</td>
+                                                                    <td>c/6 horas solo si hay dolor</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Parasetamol</td>
+                                                                    <td>Capsula 800 mg</td>
+                                                                    <td>5</td>
+                                                                    <td>mg</td>
+                                                                    <td>6 horas</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Parasetamol</td>
+                                                                    <td>Inyecciones 10mg</td>
+                                                                    <td>1</td>
+                                                                    <td>ml</td>
+                                                                    <td>6 horas</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p>Indicaciones</p>
+                                                        <p class="border">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, voluptatum ad consectetur velit vitae omnis, harum in tenetur labore amet exercitationem totam laboriosam. A distinctio ut consequuntur laboriosam architecto iste impedit quos quod eveniet qui culpa similique cupiditate, dolores aspernatur, voluptate eos nam libero, repellendus. Nulla aliquam veniam qui velit.</p>
+                                                    </div>
+                                                    <div class="col-12 text-center">
+                                                        <label for="evidencias">Receta<i class="fa fa-print pl-2"></i></label>
+                                                       
                                                     </div>
                                                     <div class="float-right">
-                                                        <button type="submit" name="guardar_perinatales" class="btn btn-primary mb-2 text-right">Guardar</button>
+                                                        <button type="submit" name="guardar_indicaciones" class="btn btn-primary mb-2 text-right">Guardar</button>
                                                     </div> 
                                                 </form>
                                             </div><!--/.col-12-->
