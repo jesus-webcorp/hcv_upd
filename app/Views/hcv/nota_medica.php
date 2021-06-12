@@ -94,6 +94,11 @@
                             border: 1px solid black !important;
                             padding: 10px;
                         }
+                        .notas{
+                            height: 550px;
+                            width: auto;
+                            overflow-y: scroll;
+                        }
                         </style>
                         <div class="row">
                             <div class="col-lg-12">
@@ -117,134 +122,175 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
-                                                    <div class="d-flex mt-2">
-                                                        <div class="col-lg-2">
-                                                            <i class="fa fa-user display-1"></i>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <p>Nombre del paciente</p>
-                                                            <p>Edad</p>
-                                                            <p>Sexo</p>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <p>Tipo de Nota</p>
-                                                            <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8 mt-3">
-                                                        <div class="form-group row">
-                                                            <label for="fc" class="col-5 col-form-label text-right">Frecuencia Cardiaca (FC)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="FrecuenciaCardiaca" class="form-control" id="fc">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="d-flex mt-2">
+                                                                <div class="col-4 col-sm-2">
+                                                                    <i class="fa fa-user display-1"></i>
+                                                                </div>
+                                                                <div class="col-4 col-sm-4">
+                                                                    <p>Nombre del paciente</p>
+                                                                    <p>Edad</p>
+                                                                    <p>Sexo</p>
+                                                                </div>
+                                                                <div class="col-4 col-sm-6">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="fr" class="col-5 col-form-label text-right">Frecuencia Respratoria (FR)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="FrecuenciaRespiratoria" class="form-control" id="fr">
+                                                        <div class="col-lg-7 mt-3">
+                                                            <div class="form-group row">
+                                                                <label for="fc" class="col-8 col-sm-5 col-form-label text-right">Frecuencia Cardiaca (FC)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="FrecuenciaCardiaca" class="form-control" id="fc">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="fr" class="col-8 col-sm-5 col-form-label text-right">Frecuencia Respratoria (FR)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="FrecuenciaRespiratoria" class="form-control" id="fr">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="tc" class="col-8 col-sm-5 col-form-label text-right">Temperatura Corporal (Temp)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="TemperaturaCorporal" class="form-control" id="tc">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="ta" class="col-8 col-sm-5 col-form-label text-right">Tensión Arterial (TA)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="TensiónArterial" class="form-control" id="ta">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="satO2" class="col-8 col-sm-5 col-form-label text-right">Saturación de Oxígeno (SatO2)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="SatO2" class="form-control" id="satO2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="glucemia" class="col-8 col-sm-5 col-form-label text-right">Glucemia capilar (mg/dl)</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="Glucemiacapilar" class="form-control" id="glucemia">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="peso" class="col-8 col-sm-5 col-form-label text-right">Peso</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="Peso" class="form-control" id="peso">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="talla" class="col-8 col-sm-5 col-form-label text-right">Talla</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="Talla" class="form-control" id="talla">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="imc" class="col-8 col-sm-5 col-form-label text-right">IMC</label>
+                                                                <div class="col-4 col-sm-3">
+                                                                    <input type="text" name="IMC" class="form-control" id="imc">
+                                                                </div>
+                                                            </div>
+                                                            <p>Esta nota sera agregada al "Historial Clinico"</p>
+                                                            <h4 class="text-center">
+                                                                Nota General
+                                                            </h4>
+                                                            <p class="border">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Debitis minus, quaerat cum eius aliquid obcaecati exercitationem veniam consequatur recusandae hic delectus veritatis mollitia corrupti eum atque ab molestias, possimus consequuntur. Quaerat animi odio illo blanditiis iusto eaque aut laudantium, sint nulla voluptatem vero deserunt quas. Sapiente in deleniti quasi, nobis?</p>
+                                                        </div><!--/.col-lg-8-->
+                                                        <div class="col-lg-5 mt-3">
+                                                            <div class="border">
+                                                                <h6>Notas previas</h6>
+                                                                <hr>
+                                                                <div class="notas">
+                                                                    <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>12/04/2019</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>12/08/2019</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>23/11/2020</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>23/11/2020</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>23/11/2020</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <p>Operativo</p>
+                                                                    <p>23/11/2020</p>
+                                                                </div>
+                                                                <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consectetur et aperiam maxime quasi, itaque adipisci, molestias maiores perspiciatis quas.</p>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="tc" class="col-5 col-form-label text-right">Temperatura Corporal (Temp)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="TemperaturaCorporal" class="form-control" id="tc">
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <select class="custom-select mt-3" name="Enfermedad" id="enfermedad"  
+                                                         >
+                                                                <!--option selected disabled>PREDICTIVO DE NOMBRE</option-->
+                                                                <option data-tokens="HEMORROIDES - PERIODO PERINATAL" value="HEMORROIDES - PERIODO PERINATAL">HEMORROIDES - PERIODO PERINATAL</option>
+                                                                <option data-tokens="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS" value="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS">HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS</option>
+                                                                <option data-tokens="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO" value="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO">ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO"</option>
+                                                                <option data-tokens="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO" value="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO">EMBOLIA PULMONAR - SISTEMA CIRCULATORIO"</option>
+                                                                <option data-tokens="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO" value="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO">ESTENOSIS MITRAL - SISTEMA CIRCULATORIO CIRCULATORIO</option>
+                                                                <option data-tokens="INFARTO CEREBRAL - SISTEMA CIRCULATORIO" value="INFARTO CEREBRAL - SISTEMA CIRCULATORIO">INFARTO CEREBRAL - SISTEMA CIRCULATORIO</option>
+                                                            </select>
+                                                            
+                                                            <table class="table table-bordered table-responsive">
+                                                                <h4 class="text-center mt-3">Historial de diagnósticos</h4>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Enfermedad</th>
+                                                                        <th scope="col">Grupo</th>
+                                                                        <th scope="col">Eliminar</th>
+                                                                        <th scope="col">Fecha</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>ATEROSCLEROSIS</td>
+                                                                        <td>SISTEMA CIRCULATORIO</td>
+                                                                        <td>X</td>
+                                                                        <td>22/03/2020</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>PERITONITIS</td>
+                                                                        <td>SISTEMA DIGESTIVO</td>
+                                                                        <td>X</td>
+                                                                        <td>22/03/2020</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>HIPERTENSIONES</td>
+                                                                        <td>SISTEMA CIRCULATORIO</td>
+                                                                        <td>X</td>
+                                                                        <td>22/03/2020</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>DIABETES MELLITUS</td>
+                                                                        <td>ENDOCRINAS Y METABOLICAS</td>
+                                                                        <td>-</td>
+                                                                        <td>22/03/2020</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="float-right">
+                                                                <button type="submit" name="guardar_notas" class="btn btn-primary mb-2 text-right">Guardar</button> 
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="ta" class="col-5 col-form-label text-right">Tensión Arterial (TA)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="TensiónArterial" class="form-control" id="ta">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="satO2" class="col-5 col-form-label text-right">Saturación de Oxígeno (SatO2)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="SatO2" class="form-control" id="satO2">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="glucemia" class="col-5 col-form-label text-right">Glucemia capilar (mg/dl)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Glucemiacapilar" class="form-control" id="glucemia">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="peso" class="col-5 col-form-label text-right">Peso</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Peso" class="form-control" id="peso">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="talla" class="col-5 col-form-label text-right">Talla</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Talla" class="form-control" id="talla">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="imc" class="col-5 col-form-label text-right">IMC</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="IMC" class="form-control" id="imc">
-                                                            </div>
-                                                        </div>
-                                                        <p>Esta nota sera agregada al "Historial Clinico"</p>
-                                                        <h4 class="text-center">
-                                                            Nota General
-                                                        </h4>
-                                                        <p class="border">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Debitis minus, quaerat cum eius aliquid obcaecati exercitationem veniam consequatur recusandae hic delectus veritatis mollitia corrupti eum atque ab molestias, possimus consequuntur. Quaerat animi odio illo blanditiis iusto eaque aut laudantium, sint nulla voluptatem vero deserunt quas. Sapiente in deleniti quasi, nobis?</p>
-                                                    </div><!--/.col-lg-8-->
-                                                    <div class="col-12">
-                                                        <select class="custom-select" name="Enfermedad" id="enfermedad"  
-                                                     >
-                                                        <!--option selected disabled>PREDICTIVO DE NOMBRE</option-->
-                                                        <option data-tokens="HEMORROIDES - PERIODO PERINATAL" value="HEMORROIDES - PERIODO PERINATAL">HEMORROIDES - PERIODO PERINATAL</option>
-                                                        <option data-tokens="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS" value="HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS">HIPOTENSIÓN - INFECCIOSAS Y PARASITARIAS</option>
-                                                        <option data-tokens="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO" value="ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO">ANGINA INESTABLE - EMBARAZO, PARTO Y PUERPERIO"</option>
-                                                        <option data-tokens="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO" value="EMBOLIA PULMONAR - SISTEMA CIRCULATORIO">EMBOLIA PULMONAR - SISTEMA CIRCULATORIO"</option>
-                                                        <option data-tokens="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO" value="ESTENOSIS MITRAL - SISTEMA CIRCULATORIO">ESTENOSIS MITRAL - SISTEMA CIRCULATORIO CIRCULATORIO</option>
-                                                        <option data-tokens="INFARTO CEREBRAL - SISTEMA CIRCULATORIO" value="INFARTO CEREBRAL - SISTEMA CIRCULATORIO">INFARTO CEREBRAL - SISTEMA CIRCULATORIO</option>
-                                                    </select>
-                                                        
-                                                    </div>
-                                                    <table class="table table-bordered table-responsive">
-                                                        <h4 class="text-center mt-3">Historial de diagnósticos</h4>
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Enfermedad</th>
-                                                                <th scope="col">Grupo</th>
-                                                                <th scope="col">Eliminar</th>
-                                                                <th scope="col">Fecha</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>ATEROSCLEROSIS</td>
-                                                                <td>SISTEMA CIRCULATORIO</td>
-                                                                <td>X</td>
-                                                                <td>22/03/2020</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>PERITONITIS</td>
-                                                                <td>SISTEMA DIGESTIVO</td>
-                                                                <td>X</td>
-                                                                <td>22/03/2020</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>HIPERTENSIONES</td>
-                                                                <td>SISTEMA CIRCULATORIO</td>
-                                                                <td>X</td>
-                                                                <td>22/03/2020</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>DIABETES MELLITUS</td>
-                                                                <td>ENDOCRINAS Y METABOLICAS</td>
-                                                                <td>-</td>
-                                                                <td>22/03/2020</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-
-                                                    <div class="float-right">
-                                                        <button type="submit" name="guardar_notas" class="btn btn-primary mb-2 text-right">Guardar</button> 
                                                     </div>
                                                 </form>
                                             </div><!-- /.col-12-->
@@ -263,19 +309,23 @@
                                                     <div class="row">  
                                                         <div class="col-12">
                                                             <div class="d-flex mt-2">
-                                                                <div class="col-2">
+                                                                <div class="col-4 col-sm-2">
                                                                     <i class="fa fa-user display-1"></i>
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-4 col-sm-4">
                                                                     <p>Nombre del paciente</p>
                                                                     <p>Edad</p>
                                                                     <p>Sexo</p>
                                                                 </div>
-                                                                <div class="col-3">
+                                                                <div class="col-4 col-sm-6">
                                                                     <p>Tipo de Nota</p>
                                                                     <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
                                                                 </div>
                                                             </div>  
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            
+                                                       
                                                             
                                                             <div class="form-group row">
                                                                 <label for="cintura" class="col-5 col-form-label text-right">Circ. Cintura (cm)</label>
@@ -313,30 +363,29 @@
                                                                     <input type="text" name="Grasa_visceral" class="form-control" id="grasa_visceral">
                                                                 </div>
                                                             </div>
-                                                        </div><!--/.col-lg-6-->
                                                         
-                                                            
-                                                           
-                                                        <div class="form-group row">
-                                                            <label for="agua_corporal" class="col-5 col-form-label text-right">% Agua corporal total (%)</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Agua_corporal" class="form-control" id="agua_corporal">
+                                                        </div><!--/.col-lg-6-->  
+                                                        <div class="col-lg-6">
+                                                                <div class="form-group row">
+                                                                <label for="agua_corporal" class="col-5 col-form-label text-right">% Agua corporal total (%)</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Agua_corporal" class="form-control" id="agua_corporal">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="tasa_metabolica" class="col-5 col-form-label text-right">Tasa Metabólica basal</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Tasa_metabolica" class="form-control" id="tasa_metabolica">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="edad_metabolica" class="col-5 col-form-label text-right">Edad metabólica</label>
+                                                                <div class="col-3">
+                                                                    <input type="text" name="Edad_metabolica" class="form-control" id="edad_metabolica">
+                                                                
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="tasa_metabolica" class="col-5 col-form-label text-right">Tasa Metabólica basal</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Tasa_metabolica" class="form-control" id="tasa_metabolica">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="edad_metabolica" class="col-5 col-form-label text-right">Edad metabólica</label>
-                                                            <div class="col-3">
-                                                                <input type="text" name="Edad_metabolica" class="form-control" id="edad_metabolica">
-                                                            
-                                                        </div>
-                                                    </div>
-                                                        
                                                     </div><!--/.row-->
                                                     <div class="float-right">
                                                         <button type="submit" name="guardar_nutricion" class="btn btn-primary mb-2 text-right">Guardar</button> 
@@ -356,17 +405,23 @@
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
-                                                        <div class="col-lg-6">
+                                                        <div class="col-12">
                                                             <div class="d-flex mt-2">
-                                                                <div class="col-lg-4">
+                                                                <div class="col-4 col-sm-2">
                                                                     <i class="fa fa-user display-1"></i>
                                                                 </div>
-                                                                <div class="col-lg-6">
+                                                                <div class="col-4 col-sm-4">
                                                                     <p>Nombre del paciente</p>
                                                                     <p>Edad</p>
                                                                     <p>Sexo</p>
                                                                 </div>
-                                                            </div>   
+                                                                <div class="col-4 col-sm-6">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="col-lg-6">
                                                             <div class="form-group row">
                                                                 <label for="metodo_intervencion" class="col-6 col-form-label text-right">Técnica/método de intervención</label>
                                                                 <div class="col-3">
@@ -392,13 +447,6 @@
                                                                 </div>
                                                             </div>
                                                         </div><!--/.col-lg-6-->
-
-                                                        <div class="col-lg-6">
-                                                            <div class="mt-2">
-                                                                <p>Tipo de Nota</p>
-                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
-                                                            </div>
-                                                        </div><!--/.col-lg-6-->
                                                     </div><!--/.row-->
                                                     
                                                     <div class="float-right">
@@ -419,28 +467,26 @@
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
-                                                        <div class="col-lg-6">
+                                                        <div class="col-12">
                                                             <div class="d-flex mt-2">
-                                                                <div class="col-lg-4">
+                                                                <div class="col-4 col-sm-2">
                                                                     <i class="fa fa-user display-1"></i>
                                                                 </div>
-                                                                <div class="col-lg-6">
+                                                                <div class="col-4 col-sm-4">
                                                                     <p>Nombre del paciente</p>
                                                                     <p>Edad</p>
                                                                     <p>Sexo</p>
                                                                 </div>
+                                                                <div class="col-4 col-sm-6">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
                                                             </div> 
-                                                            <div class="text-md-right">
+                                                            <div class="text-center mt-2">
                                                                 <label for="evidencias">Subir archivo<i class="fa fa-paperclip pl-2"></i></label>
                                                                 <input type="file" name="foto" class="form-control-file btn" id="evidencias">
                                                             </div>
-                                                        </div><!--/.col-lg-6-->
-                                                        <div class="col-lg-6">
-                                                            <div class="mt-2">
-                                                                <p>Tipo de Nota</p>
-                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
-                                                            </div>
-                                                        </div><!--/.col-lg-6-->
+                                                        </div>
                                                         <div class="col-12 mt-3">
                                                             <h6 class="text-center">Historial de Archivos Subidos</h6>
                                                             <table class="table table-bordered table-responsive">
@@ -512,32 +558,30 @@
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
-                                                        <div class="col-lg-6">
+                                                        <div class="col-12">
                                                             <div class="d-flex mt-2">
-                                                                <div class="col-lg-4">
+                                                                <div class="col-4 col-sm-2">
                                                                     <i class="fa fa-user display-1"></i>
                                                                 </div>
-                                                                <div class="col-lg-6">
+                                                                <div class="col-4 col-sm-4">
                                                                     <p>Nombre del paciente</p>
                                                                     <p>Edad</p>
                                                                     <p>Sexo</p>
                                                                 </div>
+                                                                <div class="col-4 col-sm-6">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
                                                             </div>    
-                                                        </div><!--/.col-lg-6-->
-                                                        <div class="col-lg-6">
-                                                             <div class="mt-2">
-                                                                <p>Tipo de Nota</p>
-                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
-                                                            </div>
-                                                        </div><!--/.col-lg-6-->
-                                                        <div class="col-4 mt-3">
+                                                        </div>
+                                                        <div class="col-12 col-md-4 text-center mt-3">
                                                             <select class="custom-select mr-sm-5" name="diagnostico" id="diagnostico">
                                                                 <option value="Ingesta (NI)">Ingesta (NI)</option>
                                                                 <option value="Clinical (NC)">Clinical (NC)</option>
                                                                 <option value="Comportamiento ambiental (NB)">Comportamiento ambiental (NB)</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-4 mt-3">
+                                                        <div class="col-12 col-md-4 text-center mt-3">
                                                              <select class="custom-select mr-sm-5" name="ingesta" id="ingesta">
                                                                 <option value="Balance Calórico/energético (1)">Balance Calórico/energético (1)</option>
                                                                 <option value="Ingesta oral o del soporte nutricional">Ingesta oral o del soporte nutricional</option>
@@ -552,7 +596,7 @@
                                                                 <option value="Acceso a alimentos y seguridad">Acceso a alimentos y seguridad</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-4 mt-3">
+                                                        <div class="col-12 col-md-4 text-center mt-3">
                                                             <select class="custom-select mr-sm-5" name="alimentacion" id="alimentacion">
                                                                 <option value="Grasa y colesterol">Grasa y colesterol</option>
                                                                 <option value="Proteína">Proteína</option>
@@ -562,7 +606,7 @@
                                                                 <option value="Multi-nutrientes">Multi-nutrientes</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-5 mt-3">
+                                                        <div class="col-12 col-md-5 text-center mt-3">
                                                             <select class="custom-select mr-sm-5" name="ingestas" id="ingestas">
                                                                 <option value="Ingesta insuficiente de fibra">Ingesta insuficiente de fibra</option>
                                                                 <option value="Ingesta excesiva de fibra">Ingesta excesiva de fibra</option>
@@ -617,32 +661,30 @@
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
-                                                        <div class="col-lg-6">
+                                                        <div class="col-12">
                                                             <div class="d-flex mt-2">
-                                                                <div class="col-lg-4">
+                                                                <div class="col-4 col-sm-2">
                                                                     <i class="fa fa-user display-1"></i>
                                                                 </div>
-                                                                <div class="col-lg-6">
+                                                                <div class="col-4 col-sm-4">
                                                                     <p>Nombre del paciente</p>
                                                                     <p>Edad</p>
                                                                     <p>Sexo</p>
                                                                 </div>
+                                                                <div class="col-4 col-sm-6">
+                                                                    <p>Tipo de Nota</p>
+                                                                    <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
+                                                                </div>
                                                             </div> 
-                                                        </div><!--col-lg-6-->
+                                                        </div>
 
-                                                        <div class="col-lg-6">
-                                                            <div class="mt-2">
-                                                                <p>Tipo de Nota</p>
-                                                                <p>Psicología/Nutrición/Medicina/Fisioterápia/Especialidad</p>
-                                                            </div>
-                                                        </div> <!--col-lg-6-->
-                                                        <div class="col-lg-4">
+                                                        <div class="col-12 col-md-4 text-center mt-3">
                                                             <select class="custom-select mr-sm-5" name="sustancia" id="sustancia">
                                                                 <option selected disabled value="Sustancia Activa">Sustancia Activa</option>
                                                                 <option value="Parasetamol">Parasetamol</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-12 col-md-4 text-center mt-3">
                                                             <select class="custom-select mr-sm-5" name="presentacion" id="presentacion">
                                                                 <option selected disabled value="Presentación">Presentación</option>
                                                                 <option value="Tabletas 500 mg">Tabletas 500 mg</option>
@@ -651,8 +693,8 @@
                                                                 <option value="Inyecciones 10mg">Inyecciones 10mg</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-4 d-flex">
-                                                            <textarea name="indicaciones" id="" cols="30" rows="2" placeholder="Indicaciones"></textarea>
+                                                        <div class="col-12 col-md-4 mt-3 d-flex justify-content-center">
+                                                            <textarea name="indicaciones" id="" cols="30" rows="1" placeholder="Indicaciones"></textarea>
                                                             <button type="submit" name="Agregar_ingesta" class="btn btn-primary ml-2">Agregar</button>
                                                         </div>
                                                     </div>
