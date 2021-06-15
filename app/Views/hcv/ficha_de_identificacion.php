@@ -20,7 +20,7 @@
 </div>
 
 <style>
-   .clear {
+    .clear {
         clear: both !important;
         margin-top: 20px !important;
     }
@@ -32,7 +32,7 @@
         position: absolute !important;
         margin-top: 39px;
         min-width: 100%;
-        z-index:99999999999999999999999999999999999999999;
+        z-index: 99999999999999999999999999999999999999999;
     }
 
     #searchResult li {
@@ -49,17 +49,17 @@
     #searchResult li:hover {
         cursor: pointer !important;
     }
-    
+
     /* ############  CP SEARCH ############### */
-    
-        #cpResult {
-         list-style: none !important;
+
+    #cpResult {
+        list-style: none !important;
         padding: 0px !important;
         width: 250px !important;
         position: absolute !important;
         margin-top: 39px;
         min-width: 100%;
-        z-index:99999999999999999999999999999999999999999;
+        z-index: 99999999999999999999999999999999999999999;
     }
 
     #cpResult li {
@@ -76,8 +76,6 @@
     #cpResult li:hover {
         cursor: pointer !important;
     }
-    
-    
 </style>
 
 <!-- ########## START: MAIN PANEL ########## -->
@@ -136,8 +134,8 @@
                                 <label class="col-sm-4 form-control-label">Nacionalidad: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <select class="form-control select2" id="nacionalidad" name="ID_CAT_NATIONALITY" data-placeholder="Choose country">
-                                    <option value="ninguna" >Elige tu nacionalidad</option>
-                                    <option value="Mexico" > Mexico</option>
+                                        <option value="ninguna">Elige tu nacionalidad</option>
+                                        <option value="Mexico"> Mexico</option>
 
                                     </select>
                                 </div>
@@ -285,7 +283,7 @@
                                 <label class="col-sm-4 form-control-label">Formación Academica: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <select class="form-control select2" name="ID_CAT_ACADEMIC" id="academico" data-placeholder="Choose country">
-                                        <option label=""></option>
+                                        <option label="">Elige tu grado academico</option>
 
 
                                     </select>
@@ -318,7 +316,7 @@
                                 <label class="col-sm-4 form-control-label">Religión: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <select class="form-control select2" name="ID_CAT_RELIGION" data-placeholder="Choose country">
-                                        <option label="Elige tu religión"></option>
+                                        <option>Elige tu religión</option>
                                         <option value="Católica">Católica</option>
 
 
@@ -331,30 +329,30 @@
                                 <label class="col-sm-4 form-control-label">¿Te identificas con alguna comunidad indígena? </label>
                                 <div class="col-sm-4 mg-t-10 mg-sm-t-0">
                                     <label class="ckbox">
-                                        <input class="ANSWER_INDIGENOUS_COMUNITY" type="checkbox" value="Si"><span>Si</span>
+                                        <input class="check" name="ANSWER_INDIGENOUS_COMUNITY" type="checkbox" value="Si"><span>Si</span>
                                     </label>
                                 </div>
 
                                 <div class="col-sm-4 mg-t-10 mg-sm-t-0">
                                     <label class="ckbox">
-                                        <input class="ANSWER_INDIGENOUS_COMUNITY" type="checkbox" value="No"><span>No</span>
+                                        <input class="check" name="ANSWER_INDIGENOUS_COMUNITY" type="checkbox" value="No"><span>No</span>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">¿Hablas alguna lengua indígena? </label>
-                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                               <div class="input-group">
+                                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                    <div class="input-group">
                                         <span class="input-group-addon"><i class="icon ion-search tx-16 lh-0 op-6"></i></span>
                                         <input type="text" name="ID_CAT_INDIGENOUS_LENGUAGE" id="pepe" class="form-control " placeholder="">
                                         <ul id="searchResult"></ul>
                                         <div class="clear"></div>
                                     </div>
-                                 
-                             </div>
 
-                           
+                                </div>
+
+
                             </div>
 
 
@@ -406,11 +404,10 @@
         <script src="../../assets/lib/select2/js/select2.min.js"></script>
 
         <script>
-    
-           data_academic();
+            data_academic();
 
-    
-          function data_academic() {
+
+            function data_academic() {
 
                 var url_str = '<?=base_url().'/Hcv_Rest_Academic'?>';
 
@@ -427,20 +424,20 @@
 
                             let id = result.data
                             let data_length = id.length
-        
+
                             let academico = document.getElementById("academico")
-                            
+
                             console.log(academico)
 
-                             for (i=0; i <= data_length; i++){
+                            for (i = 0; i <= data_length; i++) {
 
-                                
-                                   var option = document.createElement("option");
-                                    option.innerHTML = id[i].ACADEMIC_FORMATION;
-                                    option.value =id[i].ID;
-                                    academico.appendChild(option);
-                                }
-                            
+
+                                var option = document.createElement("option");
+                                option.innerHTML = id[i].ACADEMIC_FORMATION;
+                                option.value = id[i].ID;
+                                academico.appendChild(option);
+                            }
+
 
 
                         } else {
@@ -459,7 +456,7 @@
                     }
                 })
 
-            } 
+            }
 
             $(document).ready(function() {
 
@@ -472,7 +469,7 @@
                         "search": search,
                         "limit": "10",
                         "offset": "0"
-//                        "debug": "true"
+                   
                     };
                     console.log(language);
                     $.ajax({
@@ -490,11 +487,9 @@
                                 var name = info[i].SCIENTIFIC_NAME;
                                 console.log("searchResult")
 
-                            $("#searchResult").append("<li value='" + id + "'>" + name + "</li>");
-
+                                $("#searchResult").append("<li value='" + id + "'>" + name + "</li>");
 
                             }
-
 
                             // binding click event to li
                             $("#searchResult li").bind("click", function() {
@@ -506,56 +501,59 @@
                     });
                 });
             });
-            
-            
-           $(document).ready(function() {
-                
-                   
+
+
+            $(document).ready(function() {
+
+
                 $("#cp_search").keyup(function() {
                     var search2 = document.getElementById("cp_search").value;
-                    
-                    var searchresult2 = document.getElementById("searchResult");
-                    
-                    
+
+                    let searchresult2 = document.getElementById("searchResult");
+
+
 
                     var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
 
                     var cp = {
                         "search": search2,
-                        "limit": "10",
+                        "limit": "20",
                         "offset": "0"
 
                     };
+
+
+                    if (search2 != "") {
+                        let colonia;
+                        let alcaldia;
+                        let estado;
+                        let id;
+                        let info;
                     
-                
-
-
-
-                    if (search2 != "" ) {
                         
-                      
-
                         $.ajax({
                             url: url_str,
                             type: 'POST',
                             dataType: 'json',
                             data: JSON.stringify(cp),
                             success: function(response) {
-                   
-                                console.log(response)
-                                let info = response.data;
+
+                         
+                                info = response.data;
+                              
                                 var len = info.length;
                                 $("#cpResult").empty();
                                 for (var i = 0; i < len; i++) {
-                                    var id = info[i].ID;
+                                     id = info[i].ID;
                                     var cp = info[i].CP;
-                                    let colonia = info[i].ASENTAMIENTO;
-                                    let alcaldia = info[i].MUNICIPIO;
-                                    let estado = info[i].ESTADO;
-                                     console.log("searchResult2")
+                                    colonia = info[i].ASENTAMIENTO;
+                                    alcaldia = info[i].MUNICIPIO;
+                                    estado = info[i].ESTADO;
+                                    allinfo = info[i];
+                                 
 
-                                $("#cpResult").append("<li value='" + id + "'>" + cp + ", " + colonia +  "</li>");
-                                
+                                    $("#cpResult").append("<li value='" + id + "'>" + cp + ", " + colonia + "</li>");
+
 
                                 }
 
@@ -563,9 +561,28 @@
                                 // binding click event to li
                                 $("#cpResult li").bind("click", function() {
                                     var value = $(this).text();
+                                    var id2 = this.value
+                            
                                     $("#cp_search").val(value);
-                                    $("#cpResult").empty();
-                               
+                                     console.log(info);
+                                     console.log(id2)
+                        
+                                    $("#cpResult").empty();                                    
+                                    var len = info.length;
+            
+                                  
+                                    for (var i = 0; i<len; i++) {
+                                        
+                                        if(info[i].ID == id2){
+                                        $("#colonia").val(info[i].ASENTAMIENTO);
+                                        $("#delegacion").val(info[i].MUNICIPIO);
+                                        $("#estado").val(info[i].ESTADO);
+                                        console.log(info[i])
+                                        }
+                                        
+                                    }
+                                  
+
                                 });
                             }
                         });
@@ -628,4 +645,18 @@
                     }
                 })
             });
+
+            $(document).ready(function() {
+                let Checked = null;
+                //The class name can vary
+                for (let CheckBox of document.getElementsByClassName('check')) {
+                    CheckBox.onclick = function() {
+                        if (Checked != null) {
+                            Checked.checked = false;
+                            Checked = CheckBox;
+                        }
+                        Checked = CheckBox;
+                    }
+                }
+            });    
         </script>
