@@ -129,6 +129,13 @@
 
                     <div class="col-lg-5">
                         <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
+                            
+                            <div class="row">
+                                <label class="col-sm-4 form-control-label">ID USER: </label>
+                                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                                    <input type="number" name="ID_USER" class="form-control" placeholder="">
+                                </div>
+                            </div><!-- row --><br>
 
                             <div class="row">
                                 <label class="col-sm-4 form-control-label">Nacionalidad: </label>
@@ -220,7 +227,7 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Colonia: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <input type="text" id="colonia" name="TOWN" class="form-control" placeholder="">
+                                    <input type="text" id="colonia" name="ID_CAT_TOWN" class="form-control" placeholder="">
                                 </div>
                             </div>
 
@@ -299,13 +306,12 @@
                             <div class="row mg-t-20">
                                 <label class="col-sm-4 form-control-label">Estado civil: </label>
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                    <select class="form-control select2" name="ID_CAT_MARITAL_STATUS
-" data-placeholder="Choose country">
+                                    <select class="form-control select2" name="ID_CAT_MARITAL_STATUS" data-placeholder="Choose country">
                                         <option label="Elige tu estado civil"></option>
-                                        <option value="Casado">Casado</option>
-                                        <option value="Soltero">Soltero</option>
-                                        <option value="Viudo">Viudo</option>
-                                        <option value="Union libre">Union libre</option>
+                                        <option value="1">Casado</option>
+                                        <option value="2">Soltero</option>
+                                        <option value="3">Viudo</option>
+                                        <option value="4">Union libre</option>
 
                                     </select>
                                 </div>
@@ -345,7 +351,7 @@
                                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon ion-search tx-16 lh-0 op-6"></i></span>
-                                        <input type="text" name="ID_CAT_INDIGENOUS_LENGUAGE" id="pepe" class="form-control " placeholder="">
+                                        <input type="text" name="ANSWER_INDIGENOUS_LENGUAGE" id="pepe" class="form-control " placeholder="">
                                         <ul id="searchResult"></ul>
                                         <div class="clear"></div>
                                     </div>
@@ -392,7 +398,7 @@
 
 
             <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5" id="send">Enviar</button>
+                <button class="btn btn-info mg-r-5" id="submit_ficha">Enviar</button>
                 <button class="btn btn-secondary">Cancel</button>
             </div><!-- form-layout-footer -->
 
@@ -405,6 +411,7 @@
 
         <script>
             data_academic();
+            sendFormNew();
 
 
             function data_academic() {
@@ -504,43 +511,30 @@
 
 
             $(document).ready(function() {
-
-
                 $("#cp_search").keyup(function() {
                     var search2 = document.getElementById("cp_search").value;
-
                     let searchresult2 = document.getElementById("searchResult");
-
-
-
                     var url_str = '<?=base_url().'/Hcv_Rest_cp'?>';
-
                     var cp = {
                         "search": search2,
                         "limit": "20",
                         "offset": "0"
 
                     };
-
-
                     if (search2 != "") {
                         let colonia;
                         let alcaldia;
                         let estado;
                         let id;
                         let info;
-                    
-                        
+  
                         $.ajax({
                             url: url_str,
                             type: 'POST',
                             dataType: 'json',
                             data: JSON.stringify(cp),
                             success: function(response) {
-
-                         
                                 info = response.data;
-                              
                                 var len = info.length;
                                 $("#cpResult").empty();
                                 for (var i = 0; i < len; i++) {
@@ -550,46 +544,73 @@
                                     alcaldia = info[i].MUNICIPIO;
                                     estado = info[i].ESTADO;
                                     allinfo = info[i];
-                                 
-
                                     $("#cpResult").append("<li value='" + id + "'>" + cp + ", " + colonia + "</li>");
-
-
                                 }
-
 
                                 // binding click event to li
                                 $("#cpResult li").bind("click", function() {
                                     var value = $(this).text();
-                                    var id2 = this.value
-                            
+                                    var id2 = this.value                            
                                     $("#cp_search").val(value);
                                      console.log(info);
-                                     console.log(id2)
-                        
+                                     console.log(id2)                        
                                     $("#cpResult").empty();                                    
-                                    var len = info.length;
-            
-                                  
-                                    for (var i = 0; i<len; i++) {
-                                        
+                                    var len = info.length;                                      
+                                    for (var i = 0; i<len; i++) {                                        
                                         if(info[i].ID == id2){
                                         $("#colonia").val(info[i].ASENTAMIENTO);
                                         $("#delegacion").val(info[i].MUNICIPIO);
                                         $("#estado").val(info[i].ESTADO);
                                         console.log(info[i])
-                                        }
-                                        
+                                        }                                    
                                     }
-                                  
-
                                 });
                             }
                         });
                     }
-
                 });
             });
+            
+            
+        function sendFormNew(){
+            $(document).on('click','#submit_ficha',function(){
+            var url_str = '<?=base_url().'/Hcv_Rest_Identity/create'?>';
+            var loginForm = $("#ficha_description").serializeArray();
+            var loginFormObject = {};
+            $.each(loginForm,
+                function(i, v) {
+                    loginFormObject[v.name] = v.value;
+                console.log(loginFormObject)
+                }
+            );
+            // send ajax
+            $.ajax({
+                    url: url_str, // url where to submit the request
+                    type : "POST", // type of action POST || GET
+                    dataType : 'json', // data type
+                    data : JSON.stringify( loginFormObject ), // post data || get data
+                    success : function(result) {
+                        if(result.status == 200){
+                            console.log(result);
+                            $('#success').text(result.messages.success);
+                            $('#succes-alert').show();
+                       
+                        }else{
+                            $('#error').text(result.error);
+                            $('#error-alert').show();
+                        }
+                   
+                    },
+                    error: function(xhr, resp, text) {
+                        console.log(xhr, resp, text);
+                        $('#loader').toggle();
+                        $('#error-alert').show();
+                        $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+                        $('#modal_delete').modal('toggle');
+                    }
+                })
+            });
+        }
 
 
 

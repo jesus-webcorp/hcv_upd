@@ -40,7 +40,6 @@ class Hcv_Rest_Identity extends ResourceController
         'ID_CAT_RELIGION' => $json->ID_CAT_RELIGION , 
         'ANSWER_INDIGENOUS_COMUNITY' => $json->ANSWER_INDIGENOUS_COMUNITY , 
         'ANSWER_INDIGENOUS_LENGUAGE' => $json->ANSWER_INDIGENOUS_LENGUAGE , 
-        'ID_CAT_INDIGENOUS_LENGUAGE' => $json->ID_CAT_INDIGENOUS_LENGUAGE , 
         'ID_CAT_TUTOR' => $json->ID_CAT_TUTOR , 
         'ANSWER_OTHER_TUTOR' => $json->ANSWER_OTHER_TUTOR ,
         'ZIP_CODE' => $json->ZIP_CODE ,
