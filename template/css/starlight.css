@@ -11874,7 +11874,7 @@ textarea.parsley-success:focus {
   right: 0;
   left: 0;
   z-index: 1030;
-  background-color: #2b333e;
+  background-color: #435279;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12025,9 +12025,7 @@ textarea.parsley-success:focus {
   position: fixed;
   top: 0;
   left: -230px;
-  width: 230px;
-  height: 60px;
-  background-color: #384250;
+  background-color: #efefef;
   font-size: 22px;
   font-weight: 600;
   padding: 0 20px;
@@ -12121,6 +12119,7 @@ textarea.parsley-success:focus {
 .sl-menu-link.active + .sl-menu-link {
   border-color: transparent;
 }
+
 
 .sl-menu-item {
   display: flex;
@@ -56731,4 +56730,6 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 
-   
+      .margen-pestana{
+                                margin-top: 40px;
+                            }

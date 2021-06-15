@@ -66,6 +66,8 @@
                         border: 1px solid #ccc;
                         border-top: none;
                         }
+                            
+                         
                         </style>
                         <div class="row">
                             <div class="col-lg-12">
@@ -90,8 +92,11 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
+                                               <div class="margen-pestana">
                                                 <form action="" method="POST">
                                                     <div class="form-group col-12 ">
+                                                       
+                                                       
                                                         <select class="custom-select mr-sm-5" name="rama" id="rama">
                                                             <option selected disabled>Rama</option>
                                                             <option value="Materna">Materna</option>
@@ -114,7 +119,7 @@
                                                     </div>
                                                 
                                                     <!--Listado de enfermedades-->
-                                                    <h3 class="text-center">Listado de enfermedades</h3>
+                                                    <h3 class="text-center margen-pestana">Listado de enfermedades</h3>
                                                     <table class="table table-bordered table-responsive">
                                                         <thead>
                                                             <tr>
@@ -163,6 +168,7 @@
                                                         <button type="submit" name="guardar_fam" class="btn btn-primary mb-2 text-right">Guardar</button> 
                                                     </div>
                                                 </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

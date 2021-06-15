@@ -59,6 +59,8 @@
   img {
     page-break-inside: avoid;
   }
+    
+    
 
   p,
   h2,
@@ -1938,8 +1940,8 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #0866C6;
-  border-color: #0866C6;
+  background-color: #4561a7;
+  border-color: #4561a7;
 }
 .btn-primary:hover {
   color: #fff;
@@ -11878,7 +11880,7 @@ textarea.parsley-success:focus {
   right: 0;
   left: 0;
   z-index: 1030;
-  background-color: #2b333e;
+  background-color: #4561a7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11967,7 +11969,7 @@ textarea.parsley-success:focus {
 .navicon-left {
   width: 60px;
   height: 60px;
-  background-color: #313a47;
+  background-color: #4561a7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11985,7 +11987,7 @@ textarea.parsley-success:focus {
   display: flex;
   width: 60px;
   height: 60px;
-  background-color: #252c35;
+  background-color: #4561a7;
   align-items: center;
   justify-content: center;
 }
@@ -12029,12 +12031,8 @@ textarea.parsley-success:focus {
   position: fixed;
   top: 0;
   left: -230px;
-  width: 230px;
-  height: 60px;
-  background-color: #384250;
   font-size: 22px;
   font-weight: 600;
-  padding: 0 20px;
   display: flex;
   align-items: center;
   z-index: 1030;
@@ -12042,7 +12040,7 @@ textarea.parsley-success:focus {
 }
 @media (min-width: 992px) {
   .sl-logo {
-    left: 0;
+    left: 55px;
   }
 }
 .sl-logo > a {
@@ -56785,4 +56783,17 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+
+.margen-pestana{
+ margin-top: 40px;
+}
+
+.logo-red{
+    max-width: 115px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
 }

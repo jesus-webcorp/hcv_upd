@@ -1,5 +1,5 @@
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="sl-logo"><a href="<?=base_url()?>"><div><img src="<?=base_url()?>/../../assets/img/logo_b.png" height="100%" width="100%"></div></div>
+    <div class="sl-logo"><a href="<?=base_url()?>"><div><img class="logo-red" src="<?=base_url()?>/../../assets/img/red-medica-segura.png"></div></div>
     <div class="sl-sideleft">
       <div class="input-group input-group-search">
         <input type="search" name="search" class="form-control" placeholder="Search">
