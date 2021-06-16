@@ -96,26 +96,35 @@
                                                 <form action="" method="POST">
                                                     <div class="form-group col-12 ">
                                                        
-                                                       
-                                                        <select class="custom-select mr-sm-5" name="rama" id="rama">
-                                                            <option selected disabled>Rama</option>
-                                                            <option value="Materna">Materna</option>
-                                                            <option value="Paterna">Paterna</option>
-                                                            <option value="Hermanos">Hermanos</option>
-                                                        </select>
-                                                        <select class="custom-select mr-sm-5" name="parentesco" id="parentesco">
-                                                            <option selected disabled>Parentesco</option>
-                                                            <option value="Madre/Padre">Madre/Padre</option>
-                                                            <option value="Abuelo">Abuelo</option>
-                                                            <option value="Abuela">Abuela</option>
-                                                            <option value="Tios">Tios</option>
-                                                            <option value="Hermanos">Hermanos</option>
-                                                        </select>
-                                                        <select class="custom-select mr-sm-5" name="enfermedad" id="enfermedad">
-                                                            <option selected disabled>Enfermedad</option>
-                                                            <option value="Catálogo reducido CIE-10">Catálogo reducido CIE-10</option>
-                                                        </select>
-                                                        <button type="submit" name="submit_btn" class="btn btn-primary mb-2">Agregar</button>
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <select class="custom-select mr-sm-5" name="rama" id="rama">
+                                                                    <option selected disabled>Rama</option>
+                                                                    <option value="Materna">Materna</option>
+                                                                    <option value="Paterna">Paterna</option>
+                                                                    <option value="Hermanos">Hermanos</option>
+                                                                </select>  
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <select class="custom-select mr-sm-5" name="parentesco" id="parentesco">
+                                                                    <option selected disabled>Parentesco</option>
+                                                                    <option value="Madre/Padre">Madre/Padre</option>
+                                                                    <option value="Abuelo">Abuelo</option>
+                                                                    <option value="Abuela">Abuela</option>
+                                                                    <option value="Tios">Tios</option>
+                                                                    <option value="Hermanos">Hermanos</option>
+                                                                </select>  
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <select class="custom-select mr-sm-5" name="enfermedad" id="enfermedad">
+                                                                    <option selected disabled>Enfermedad</option>
+                                                                    <option value="Catálogo reducido CIE-10">Catálogo reducido CIE-10</option>
+                                                                </select>  
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-3">
+                                                                <button type="submit" name="submit_btn" class="btn btn-primary mb-2">Agregar</button>
+                                                            </div>
+                                                        </div>  
                                                     </div>
                                                 
                                                     <!--Listado de enfermedades-->
@@ -184,38 +193,38 @@
                                                 <form action="" method="POST">
                                                     <div class="row">  
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
-                                                                <label for="talla" class="col-3 col-form-label text-right">Talla actual</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="talla" class="col-12 col-sm-6 form-control-label">Talla actual</label>
+                                                                <div class="col-12 col-sm-4">
                                                                     <input type="text" name="Talla" class="form-control" id="talla" placeholder="cm">
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group row">
-                                                                <label for="peso" class="col-3 col-form-label text-right">Peso actual</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="peso" class="col-12 col-sm-6 col-form-label text-left">Peso actual</label>
+                                                                <div class="col-12 col-sm-4">
                                                                     <input type="text" name="Peso" class="form-control" id="peso" placeholder="kg">
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <label for="tatuaje" class="col-sm-5 col-form-label ">¿Tiene algún tatuaje?</label>
-                                                                <select class="custom-select" name="Tatuaje" id="tatuaje">
+                                                            <div class="row mg-t-20">
+                                                                <label for="tatuaje" class="col-12 col-sm-6 col-form-label text-left">¿Tiene algún tatuaje?</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Tatuaje" id="tatuaje">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="perfo" class="col-sm-10 col-form-label ">¿Tiene algún tipo de perforación estética (piercing)?</label>
-                                                                <select class="custom-select" name="Perforacion" id="perfo">
+                                                            <div class="row mg-t-20">
+                                                                <label for="perfo" class="col-12 col-sm-6 col-form-label text-left">¿Tiene algún tipo de perforación estética (piercing)?</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Perforacion" id="perfo">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="animales" class="col-sm-5 col-form-label ">¿Convive con animales?
+                                                            <div class="row mg-t-20">
+                                                                <label for="animales" class="col-12 col-sm-6 col-form-label text-left">¿Convive con animales?
                                                                 (Puede agregar más de uno)</label>
-                                                                <select class="custom-select" name="Animales" id="animales">
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Animales" id="animales">
                                                                     <option value="Caninos">Caninos</option>
                                                                     <option value="Felinos">Felinos</option>
                                                                     <option value="Roedores">Roedores</option>
@@ -227,9 +236,9 @@
 
                                                                 <button type="submit" name="agregar_animal" class="btn btn-primary ml-3 mb-2">Agregar</button>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="perfo" class="col-sm-6 col-form-label ">La casa en la que habita es...</label>
-                                                                <select class="custom-select" name="Casa" id="perfo">
+                                                            <div class="row mg-t-20">
+                                                                <label for="perfo" class="col-12 col-sm-6 col-form-label text-left">La casa en la que habita es...</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Casa" id="perfo">
                                                                     <option value="Propia">Propia</option>
                                                                     <option value="Rentada">Rentada</option>
                                                                     <option value="Otra">OtraOtra</option>
@@ -237,10 +246,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="servicios" class="col-sm-11 col-form-label">Mencione cuales son los servicios de urbanizacion con los que
+                                                            <div class="form-group row mg-t-20">
+                                                                <label for="servicios" class="col-12 col-form-label">Mencione cuales son los servicios de urbanizacion con los que
                                                                 cuenta (puede agregar más de uno)</label>
-                                                                <select class="custom-select" name="Servicios" id="servicios">
+                                                                <select class="custom-select col-12 col-sm-3" name="Servicios" id="servicios">
                                                                     <option value="Luz eléctrica">Luz eléctrica</option>
                                                                     <option value="Agua potable">Agua potable</option>
                                                                     <option value="Drenaje">Drenaje</option>
@@ -250,7 +259,7 @@
                                                                 </select>
                                                                 <button type="submit" name="agregar_servicio" class="btn btn-primary ml-3 mb-2">Agregar</button>
 
-                                                                <table class="table table-bordered table-responsive">
+                                                                <table class="col-12 table table-bordered table-responsive mg-t-20">
                                                                     <thead>
                                                                         <tr>
                                                                             <th scope="col">Servicios</th>
@@ -260,7 +269,7 @@
                                                                     <tbody>
                                                                         <tr>
                                                                             <td>Luz eléctrica</td>
-                                                                            <td></td>
+                                                                            <td>x</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Agua potable</td>
@@ -308,9 +317,9 @@
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="alimentacion" class="col-sm-7 col-form-label ">¿Qué tipo de alimentación tienes?</label>
-                                                                <select class="custom-select" name="Alimentacion" id="alimentacion">
+                                                            <div class="row mg-t-20">
+                                                                <label for="alimentacion" class="col-12 col-sm-6 col-form-label text-left">¿Qué tipo de alimentación tienes?</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Alimentacion" id="alimentacion">
                                                                     <option value="Omnivoro">Omnivoro</option>
                                                                     <option value="Vegetariano">Vegetariano</option>
                                                                     <option value="Vegano">Vegano</option>
@@ -318,34 +327,34 @@
                                                                 </select>
                                                             </div>
 
-                                                            <div class="form-group row">
-                                                                <label for="tiempos" class="col-8 col-form-label text-right">¿Cuántos tiempos de comida realizas al día?</label>
-                                                                <div class="col-4">
+                                                            <div class="row mg-t-20">
+                                                                <label for="tiempos" class="col-12 col-sm-6 col-form-label text-left">¿Cuántos tiempos de comida realizas al día?</label>
+                                                                <div class="col-12 col-sm-4">
                                                                     <input type="text" name="Tiempos" class="form-control" id="tiempos" placeholder="numero abierto">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="alimentacion" class="col-sm-7 col-form-label ">¿Realizas tu alimentación principalmente en casa?</label>
-                                                                <select class="custom-select" name="Alimentacion" id="alimentacion">
+                                                            <div class="row mg-t-20">
+                                                                <label for="alimentacion" class="col-12 col-sm-6 col-form-label text-left">¿Realizas tu alimentación principalmente en casa?</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Alimentacion" id="alimentacion">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="alcohol" class="col-sm-7 col-form-label ">¿Consumes alcohol habitualmente?</label>
-                                                                <select class="custom-select" name="Alcohol" id="alcohol">
+                                                            <div class="row mg-t-20">
+                                                                <label for="alcohol" class="col-12 col-sm-6 col-form-label text-left">¿Consumes alcohol habitualmente?</label>
+                                                                <select class="custom-select col-12 col-sm-3 ml-3" name="Alcohol" id="alcohol">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="tiempos" class="col-6 col-form-label text-center">¿Cuántas copas a la semana?</label>
-                                                                <div class="col-4">
+                                                            <div class="row mg-t-20">
+                                                                <label for="tiempos" class="col-12 col-sm-6 form-control-label text-left">¿Cuántas copas a la semana?</label>
+                                                                <div class="col-12 col-sm-4">
                                                                     <input type="text" name="Copas" class="form-control" id="copas" placeholder="numero abierto">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group col-12">
-                                                                <label for="bebiduausual">Tipo de bebida usual </label>
+                                                            <div class="form-group mg-t-20 col-12">
+                                                                <label for="bebiduausual" class="text-right">Tipo de bebida usual </label>
                                                                 <div class="form-check ml-5">
                                                                     <input class="form-check-input" type="radio" name="bebida" id="quincemas" value="Destilados" checked>
                                                                     <label class="form-check-label" for="destilados">
@@ -374,13 +383,13 @@
                                                         </div><!--col-lg-6-->
 
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
+                                                            <div class="row mg-t-20">
                                                                 <label for="alimentacion" class="col-12 col-form-label">Consumo semanal de los siguientes alimentos</label>
                                                                 <div class="col-3">
                                                                     <input type="number" min="0" name="consumo" class="form-control" id="copas">
                                                                 </div>
                                                                 <div class="col-6">
-                                                                    <select class="custom-select" name="Alimento" id="alimentacion">
+                                                                    <select class="custom-select col-12 col-sm-3 ml-3" name="Alimento" id="alimentacion">
                                                                         <option value="Pescado">Pescado</option>
                                                                         <option value="Carnes rojas">Carnes rojas</option>
                                                                         <option value="Verduras">Verduras</option>
@@ -396,8 +405,8 @@
                                                                 <div class="col-3">
                                                                     <button type="submit" name="agregarAlimento" class="btn btn-primary mb-2 text-right">Agregar</button>
                                                                 </div>
-
-                                                                <table class="table table-bordered table-responsive">
+                                                                <div class="col-12">
+                                                                    <table class="table table-bordered table-responsive mg-t-20">
                                                                     <thead>
                                                                         <tr>
                                                                             <th scope="col">Alimento</th>
@@ -438,13 +447,16 @@
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <label for="suplemento" class="col-sm-9 col-form-label ">¿Consumes algún tipo de suplemento y/o complemento alimenticio?</label>
                                                                     <select class="custom-select" name="Suplemento" id="suplemento">
                                                                         <option value="Si">Si</option>
                                                                         <option value="No">No</option>
                                                                     </select>
-                                                                    <input type="text" name="" class="form-control col-7" id="cuales" placeholder="¿Cuáles">
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" class="form-control col-7" id="cuales" placeholder="¿Cuáles">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div><!--col-lg-6-->
@@ -463,79 +475,79 @@
                                 =            Ginecoobstetricos          =
                                 ======================================-->
                                 <div id="Ginecoobstetricos" class="tabcontent">
-                                    <h3 class="text-danger text-center h4">Exclusivo mujeres</h3>
+                                    <h3 class="text-danger text-center h4 mg-t-20">Exclusivo mujeres</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
-                                                                <label for="menarca" class="col-6 col-form-label text-right">Menarca (edad de primera regla)</label>
+                                                            <div class="row mg-t-20">
+                                                                <label for="menarca" class="col-12 col-sm-6 col-form-label text-left">Menarca (edad de primera regla)</label>
                                                                 
-                                                                <div class="col-3">
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0" name="Menarca" class="form-control" id="menarca">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="inicio_sexual" class="col-6 col-form-label text-right">Edad de inicio de Vida Sexual Activa</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="inicio_sexual" class="col-12 col-sm-6 col-form-label text-left">Edad de inicio de Vida Sexual Activa</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="Inicio_sexual" id="inicio_sexual" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="ciclo" class="col-6 col-form-label text-right">Tipo de Ciclo</label>
-                                                                <select class="custom-select" name="Ciclo" id="ciclo">
+                                                            <div class="row mg-t-20">
+                                                                <label for="ciclo" class="col-12 col-sm-6 col-form-label text-left">Tipo de Ciclo</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Ciclo" id="ciclo">
                                                                     <option value="Regular">Regular</option>
                                                                     <option value="Irregular">Irregular</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="embarazos" class="col-6 col-form-label text-right">Número de embarazos</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="embarazos" class="col-6 col-form-label text-left">Número de embarazos</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="Embarazos" id="embarazos" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="partos" class="col-6 col-form-label text-right">Número de partos</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="partos" class="col-6 col-form-label text-left">Número de partos</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="Partos" id="partos" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="cesareas" class="col-6 col-form-label text-right">Número de cesáreas</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="cesareas" class="col-6 col-form-label text-left">Número de cesáreas</label>
+                                                                <div class="col-3col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="Cesareas" id="cesareas" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="abortos" class="col-6 col-form-label text-right">Número de abortos</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="abortos" class="col-6 col-form-label text-left">Número de abortos</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="Abortos" id="abortos" class="form-control" required>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label for="lactancia" class="col-6 col-form-label text-right">¿Ha dado lactancia materna?</label>
-                                                                <select class="custom-select" name="Lactancia" id="lactancia">
+                                                            <div class="row mg-t-20">
+                                                                <label for="lactancia" class="col-12 col-sm-6 col-form-label text-left">¿Ha dado lactancia materna?</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Lactancia" id="lactancia">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="menopausia" class="col-6 col-form-label text-right">Edad de inicio de menopausia</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="menopausia" class="col-12 col-sm-6 col-form-label text-left">Edad de inicio de menopausia</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0" name="Menopausia" id="menopausia" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="parejas" class="col-6 col-form-label text-right">Número de parejas sexuales</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="parejas" class="col-12 col-sm-6 col-form-label text-left">Número de parejas sexuales</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0"  name="parejas" id="parejas" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
+                                                            <div class="row mg-t-20">
                                                                 <label for="enfermedades" class="col-12 col-form-label">Ha presentado alguna enfermedades de transmisión sexual</label>
                                                                 <div class="col-12">
                                                                     <select class="custom-select" name="ETS" id="enfermedades">
@@ -552,7 +564,7 @@
                                                                     <button type="submit" name="agregarETS" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
                                                                 </div>
                                                             </div>
-                                                            <table class="table table-bordered table-responsive">
+                                                            <table class="table table-bordered table-responsive mg-t-20">
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">Delete</th>
@@ -608,25 +620,24 @@
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
-                                                                <label for="sexual" class="col-7 col-form-label text-right">Inicio de Vida Sexual Activa (Edad)</label>  
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="sexual" class="col-12 col-sm-6 col-form-label text-left">Inicio de Vida Sexual Activa (Edad)</label>  
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0" name="Sexual" class="form-control" id="sexual">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="parejas" class="col-7 col-form-label text-right">Número de parejas sexuales</label>
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="parejas" class="col-12 col-sm-6 col-form-label text-left">Número de parejas sexuales</label>
+                                                                <div class="col-12 col-sm-3">
                                                                     <input type="number" min="0" name="Parejas" class="form-control" id="parejas">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            
-                                                        <div class="form-group row">
+                                                            <div class="row mg-t-20">
                                                                 <label for="enfermedades" class="col-12 col-form-label">Ha presentado alguna enfermedades de transmisión sexual</label>
-                                                                <div class="col-12">
-                                                                    <select class="custom-select" name="ETS" id="enfermedades">
+                                                                
+                                                                    <select class="custom-select col-9 col-sm-3 ml-3" name="ETS" id="enfermedades">
                                                                         <option value="Sífilis">Sífilis</option>
                                                                         <option value="Tricomonia">Tricomonia</option>
                                                                         <option value="Herpes">Herpes</option>
@@ -637,8 +648,8 @@
                                                                         <option value="Chancro Bl">Chancro Bl</option>
                                                                         <option value="Candidiasi">Candidiasi</option>
                                                                     </select>
-                                                                    <button type="submit" name="agregarETS" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
-                                                                </div>
+                                                                    <button type="submit" name="agregarETS" class="btn btn-primary ml-3 mb-2 col-3">Agregar</button>
+                                                                
                                                             </div>
                                                             <table class="table table-bordered table-responsive">
                                                                 <thead>
@@ -696,76 +707,87 @@
                                                 <form action="" method="POST">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
-                                                                <label for="embarazo" class="col-6 col-form-label text-right">Número de embarazo del niño</label>  
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="embarazo" class="col-12 col-sm-6 col-form-label text-left">Número de embarazo del niño</label>  
+                                                                <div class="col-12 col-sm-5 col-md-6">
                                                                     <input type="number" min="0" name="Embarazo" class="form-control" id="embarazo">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="complicaciones" class="col-7 col-form-label text-right">Complicaciones durante el embarazo</label>
-                                                                <select class="custom-select" name="Complicaciones" id="complicaciones">
+                                                            <div class="row mg-t-20">
+                                                                <label for="complicaciones" class="col-12 col-sm-6 col-form-label text-left">Complicaciones durante el embarazo</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Complicaciones" id="complicaciones">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
-                                                                <input type="text" name="" class="form-control col-9 mt-3" id="otros" placeholder="¿Cuáles">
+                                                                <div class="col-12">
+                                                                    <input type="text" name="" class="form-control col-12 mt-3" id="otros" placeholder="¿Cuáles">
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="nacimiento" class="col-6 col-form-label text-right">Tipo de nacimiento</label>
-                                                                <select class="custom-select" name="Nacimiento" id="nacimiento">
+                                                            <div class="row mg-t-20">
+                                                                <label for="nacimiento" class="col-12 col-sm-6 col-form-label text-left">Tipo de nacimiento</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Nacimiento" id="nacimiento">
                                                                     <option value="Parto">Parto</option>
                                                                     <option value="Cesárea">Cesárea</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label for="madre" class="col-6 col-form-label text-right">Edad de la madre al nacimiento</label>  
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="madre" class="col-12 col-sm-6 col-form-label text-left">Edad de la madre al nacimiento</label>  
+                                                                <div class="col-12 col-sm-5 col-md-6">
                                                                     <input type="number" min="0" name="Madre" class="form-control" id="madre">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="complicacion" class="col-7 col-form-label text-right">¿Presentó alguna complicación durante el nacimiento?</label>
-                                                                <select class="custom-select" name="Complicacion" id="complicacion">
+                                                            <div class="row mg-t-20">
+                                                                <label for="complicacion" class="col-12 col-sm-6 col-form-label text-left">¿Presentó alguna complicación durante el nacimiento?</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Complicacion" id="complicacion">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
-                                                                <input type="text" name="" class="form-control col-9 mt-3" id="otros" placeholder="¿Cuáles">
+                                                                <div class="col-12">
+                                                                    <input type="text" name="" class="form-control col-auto mt-3" id="otros" placeholder="¿Cuáles">
+                                                                </div>
                                                             </div>
                                                         </div><!--col-lg-6-->
 
                                                         <div class="col-lg-6">
-                                                            <div class="form-group row">
-                                                                <label for="semanas" class="col-form-label text-right">Semanas de gestación al nacer</label>  
-                                                                <div class="col-3">
+                                                            <div class="row mg-t-20">
+                                                                <label for="semanas" class="col-12 col-sm-6  col-form-label text-left">Semanas de gestación al nacer</label>  
+                                                                <div class="col-12 col-sm-5 col-md-6">
                                                                     <input type="number" min="0" name="Semanas" class="form-control" id="semanas">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="alimentacion" class=" col-form-label text-right">Alimentación al nacer</label>
-                                                                <select class="custom-select" name="Alimentacion" id="alimentacion">
+                                                            <div class="row mg-t-20">
+                                                                <label for="alimentacion" class="col-12 col-sm-6  col-form-label text-left">Alimentación al nacer</label>
+                                                                <select class="custom-select col-12 col-sm-6 " name="Alimentacion" id="alimentacion">
                                                                     <option value="Lactancia materna">Lactancia materna</option>
                                                                     <option value="Otra">Otra</option>
                                                                 </select>
-                                                                <input type="text" name="" class="form-control col-9 mt-3" id="alimentacion" placeholder="¿Cuáles">
+                                                                <div class="col-12">
+                                                                    <input type="text" name="" class="form-control col-auto mt-3" id="alimentacion" placeholder="¿Cuáles">
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-md-5" for="apgar">Calificación de APGAR</label>
-                                                                <input type="text" name="APGAR" id="apgar" class="form-control col-md-5" placeholder="calificacion maxima 10/10" required>
+                                                            <div class="row mg-t-20">
+                                                                <label class="col-12 col-sm-6" for="apgar">Calificación de APGAR</label>
+                                                                <div class="col-12 col-sm-5 col-md-6">
+                                                                    <input type="text" name="APGAR" id="apgar" class="form-control" placeholder="calificacion maxima 10/10" required>
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-md-5" for="silverman">Calificación SILVERMAN</label>
-                                                                <input type="text" name="SILVERMAN" id="silverman" class="form-control col-md-5" placeholder="calificacion maxima 10/10" required>
+                                                            <div class="row mg-t-20">
+                                                                <label class="col-12 col-sm-6 " for="silverman">Calificación SILVERMAN</label>
+                                                                <div class="col-12 col-sm-5 col-md-6">
+                                                                    <input type="text" name="SILVERMAN" id="silverman" class="form-control" placeholder="calificacion maxima 10/10" required>
+                                                                </div>
+                                                                
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="reanimacion" class="col-7 col-form-label text-right">¿Ameritó reanimación neonatal?</label>
-                                                                <select class="custom-select" name="Reanimacion" id="reanimacion">
+                                                            <div class="row mg-t-20">
+                                                                <label for="reanimacion" class="col-12 col-sm-6  col-form-label text-left">¿Ameritó reanimación neonatal?</label>
+                                                                <select class="custom-select col-12 col-sm-6" name="Reanimacion" id="reanimacion">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label for="estancia" class="col-7 col-form-label text-right">¿Ameritó estancia en incubadora?</label>
-                                                                <select class="custom-select" name="Estancia" id="estancia">
+                                                            <div class="row mg-t-20">
+                                                                <label for="estancia" class="col-12 col-sm-6  col-form-label text-left">¿Ameritó estancia en incubadora?</label>
+                                                                <select class="custom-select col-12 col-sm-3" name="Estancia" id="estancia">
                                                                     <option value="Si">Si</option>
                                                                     <option value="No">No</option>
                                                                 </select>
@@ -789,38 +811,44 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="intervenciones" class="col-form-label text-right">¿Ha tenido intervenciones psicológicas previas?</label>
-                                                        <select class="custom-select" name="Intervenciones" id="intervenciones">
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="tratamiento" class="col-form-label text-right">¿Ha tenido tratamiento farmacológico previo por cuestiones psicológicas/psiquiatricas?</label>
-                                                        <select class="custom-select" name="Tratamiento" id="tratamiento">
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="continuacion" class="col-form-label text-right">¿Actualmente continua su tratamiento?</label>
-                                                        <select class="custom-select" name="Continuacion" id="continuacion">
-                                                            <option value="Si">Sí (especifique qué medicamentos)</option>
-                                                            <option value="No">No (especifique el motivo de la suspensión del mismo?</option>
-                                                            <textarea class="mt-3" name="textarea" rows="6" cols="50"></textarea>
-                                                        </select>
-                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row mg-t-20">
+                                                                <label for="intervenciones" class="col-form-label col-12 col-sm-6  text-left">¿Ha tenido intervenciones psicológicas previas?</label>
+                                                                <select class="custom-select col-9 col-sm-3 ml-3" name="Intervenciones" id="intervenciones">
+                                                                    <option value="Si">Si</option>
+                                                                    <option value="No">No</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="row mg-t-20">
+                                                                <label for="tratamiento" class="col-form-label col-12 col-sm-6  text-left">¿Ha tenido tratamiento farmacológico previo por cuestiones psicológicas/psiquiatricas?</label>
+                                                                <select class="custom-select col-9 col-sm-3 ml-3" name="Tratamiento" id="tratamiento">
+                                                                    <option value="Si">Si</option>
+                                                                    <option value="No">No</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="row mg-t-20">
+                                                                <label for="continuacion" class="col-form-label col-12 col-sm-6 text-left">¿Actualmente continua su tratamiento?</label>
+                                                                <select class="custom-select col-9 col-sm-3 ml-3" name="Continuacion" id="continuacion">
+                                                                    <option value="Si">Sí (especifique qué medicamentos)</option>
+                                                                    <option value="No">No (especifique el motivo de la suspensión del mismo?</option>
+                                                                </select>
+                                                                <div class="col-auto float-right">
+                                                                    <textarea class="mt-3" name="textarea" rows="3" cols="50"></textarea> 
+                                                                </div>
+                                                            </div>
 
-                                                    <div class="form-group">
-                                                        <label for="Necesidad" class="col-form-label text-right">¿Se considera con la necesidad de iniciar o continuar algún tipo de sesión psicológica?</label>
-                                                        <select class="custom-select" name="necesidad" id="necesidad">
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="float-right">
-                                                        <button type="submit" name="guardar_psicologicos" class="btn btn-primary mb-2 text-right">Guardar</button>
+                                                            <div class="row mg-t-20">
+                                                                <label for="Necesidad" class="col-form-label col-12 col-sm-6  text-left">¿Se considera con la necesidad de iniciar o continuar algún tipo de sesión psicológica?</label>
+                                                                <select class="custom-select col-9 col-sm-3 ml-3" name="necesidad" id="necesidad">
+                                                                    <option value="Si">Si</option>
+                                                                    <option value="No">No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <button type="submit" name="guardar_psicologicos" class="btn btn-primary mb-2 text-right">Guardar</button>
+                                                        </div>
                                                     </div>
                                                 </form>
                                             </div>
@@ -836,9 +864,9 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <form action="" method="POST">
-                                                    <div class="form-group">
-                                                        <label for="alergia" class="col-form-label text-right">¿Presenta algún tipo de alergia?</label>
-                                                        <select class="custom-select" name="Alergia" id="alergia">
+                                                    <div class="row mg-t-20">
+                                                        <label for="alergia" class="col-form-label col-12 col-sm-6 text-left">¿Presenta algún tipo de alergia?</label>
+                                                        <select class="custom-select col-9 col-sm-3 ml-3" name="Alergia" id="alergia">
                                                             <option selected disabled>Catálogo de Alergias</option>
                                                             <option value="Penicilina">Penicilina</option>
                                                             <option value="Sulfamidas">Sulfamidas</option>
@@ -847,9 +875,9 @@
                                                         </select>
                                                         <button type="submit" name="agregarAlergia" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="procedimiento" class="col-form-label text-right">¿Se le ha realzado alguna intervención quirurgica/operación?</label>
-                                                        <select class="custom-select" name="Procedimiento" id="procedimiento">
+                                                    <div class="row mg-t-20">
+                                                        <label for="procedimiento" class="col-form-label col-12 col-sm-6 text-left">¿Se le ha realzado alguna intervención quirurgica/operación?</label>
+                                                        <select class="custom-select col-9 col-sm-3 ml-3" name="Procedimiento" id="procedimiento">
                                                             <option selected disabled>Catálogo de Procedimientos</option>
                                                             <option value="LISIS LAPAROSCÓPICA DE ADHERENCIAS PERITONEALES">LISIS LAPAROSCÓPICA DE ADHERENCIAS PERITONEALES</option>
                                                             <option value="OTRO TRASPLANTE DE RIÑÓN">OTRO TRASPLANTE DE RIÑÓN</option>
@@ -858,25 +886,25 @@
                                                         </select>
                                                         <button type="submit" name="agregarIntervencion" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="transfusion" class="col-form-label text-right">¿Ha presentado alguna transfusión sanguinea?</label>
-                                                        <select class="custom-select" name="Transfusion" id="transfusion">
+                                                    <div class="row mg-t-20">
+                                                        <label for="transfusion" class="col-form-label col-12 col-sm-6 text-left">¿Ha presentado alguna transfusión sanguinea?</label>
+                                                        <select class="custom-select col-9 col-sm-3 ml-3" name="Transfusion" id="transfusion">
                                                             <option value="Si">Si</option>
                                                             <option value="No">No</option>
                                                         </select> <br>
-                                                        <textarea class="mt-3" name="textarea" rows="2" cols="50" placeholder="especificar motivo y fecha"></textarea>
+                                                        <textarea class="mt-3" name="textarea" rows="2" cols="50" placeholder="Especificar motivo y fecha"></textarea>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="accidente" class="col-form-label text-right">¿Ha presentado alguna fractura, esguince o luxación?</label>
-                                                        <select class="custom-select" name="Accidente" id="accidente">
+                                                    <div class="row mg-t-20">
+                                                        <label for="accidente" class="col-form-label col-12 col-sm-6 text-left">¿Ha presentado alguna fractura, esguince o luxación?</label>
+                                                        <select class="custom-select col-12 col-sm-3 ml-3" name="Accidente" id="accidente">
                                                             <option value="Si">Si</option>
                                                             <option value="No">No</option>
                                                         </select> <br>
-                                                        <textarea class="mt-3" name="textarea" rows="2" cols="50" placeholder="especificar motivo y fecha"></textarea>
+                                                        <textarea class="mt-3" name="textarea" rows="2" cols="50" placeholder="Especificar motivo y fecha"></textarea>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="infectocontagiosa" class="col-form-label text-right">¿Ha presentado alguna enfermedad de tipo infectocontagiosa?</label>
-                                                        <select class="custom-select" name="Infectocontagiosa" id="infectocontagiosa">
+                                                    <div class="row mg-t-20">
+                                                        <label for="infectocontagiosa" class="col-form-label col-12 col-sm-6 text-left">¿Ha presentado alguna enfermedad de tipo infectocontagiosa?</label>
+                                                        <select class="custom-select col-12 col-sm-3 ml-3" name="Infectocontagiosa" id="infectocontagiosa">
                                                             <option value="Catálogo de Enfermedades InfectocontagiosasC IE-10 selección" selected disabled>Catálogo de Enfermedades InfectocontagiosasC IE-10 selección</option>
                                                             <option value="FIEBRE TIFOIDEA">FIEBRE TIFOIDEA</option>
                                                             <option value="CÓLERA">CÓLERA</option>
@@ -885,9 +913,9 @@
                                                         </select>
                                                         <button type="submit" name="agregarEI" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="tipica" class="col-form-label text-right">¿Ha presentado alguna enfermedades tipicas de la infancia?</label>
-                                                        <select class="custom-select" name="Tipica" id="tipica">
+                                                    <div class="row mg-t-20">
+                                                        <label for="tipica" class="col-form-label col-12 col-sm-6 text-left">¿Ha presentado alguna enfermedades tipicas de la infancia?</label>
+                                                        <select class="custom-select col-9 col-sm-3 ml-3" name="Tipica" id="tipica">
                                                             <option value="Catálogo de Enfermedades de la Infancia" selected disabled>Catálogo de Enfermedades de la Infancia</option>
                                                             <option value="ESCARLATINA">ESCARLATINA</option>
                                                             <option value="DIFTERIA">DIFTERIA</option>
@@ -896,34 +924,37 @@
                                                         </select>
                                                         <button type="submit" name="agregarEI" class="btn btn-primary ml-3 mb-2 text-right">Agregar</button>
                                                     </div>
-                                                    <div class="form-group col-12">
-                                                        <label for="comsumo">Consumo de Sustancias</label>
+                                                    <div class="row mg-t-20">
+                                                        <label for="comsumo" class="col-12">Consumo de Sustancias</label>
                                                         <div class="form-check ml-5">
                                                             <input class="form-check-input" type="radio" name="sustancias" id="ninguna" value="Ninguna" checked>
-                                                            <label class="form-check-label" for="ninguna">
+                                                            <label class="form-check-label pl-0" for="ninguna">
                                                                 Ninguna
                                                             </label>
                                                         </div>
                                                         <div class="form-check ml-5">
                                                             <input class="form-check-input" type="radio" name="sustancias" id="tabaco" value="Tabaco" checked>
-                                                            <label class="form-check-label" for="tabaco">
+                                                            <label class="form-check-label pl-0" for="tabaco">
                                                                 Tabaco
                                                             </label>
                                                         </div>
                                                         <div class="form-check ml-5">
                                                             <input class="form-check-input" type="radio" name="bebida" id="otros" value="Otros" checked>
-                                                            <label class="form-check-label" for="otros">
+                                                            <label class="form-check-label pl-0" for="otros">
                                                                 Otros<input type="text" name="" class="form-control" id="otros" placeholder="¿Cuáles">
                                                             </label>
                                                         </div>                         
                                                     </div>      
-                                                    <div class="form-group">
-                                                        <label for="periodicidad" class="col-form-label text-right">Especifique cantidad y periodicidad</label> <br>
-                                                        <textarea class="mt-3" name="textarea" rows="2" cols="50"></textarea>
+                                                    <div class="row">
+                                                        <label for="periodicidad" class="col-form-label col-12 text-left">Especifique cantidad y periodicidad</label> <br>
+                                                        <div class="col-12">
+                                                            <textarea class="mt-1" name="textarea" rows="2" cols="50"></textarea>
+                                                        </div>
+                                                        
                                                     </div>     
 
                                                     <div class="float-right">
-                                                        <button type="submit" name="guardar_perpatologicos" class="btn btn-primary mb-2 text-right">Guardar</button> 
+                                                        <button type="submit" name="guardar_perpatologicos" class="btn btn-primary mb-2 mg-t-20 text-right">Guardar</button> 
                                                     </div> 
                                                 </form>
                                             </div>
