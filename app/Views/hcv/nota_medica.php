@@ -108,8 +108,8 @@
                                     <button class="tablinks" onclick="openCity(event, 'Nutricion')">Nutrición</button>
                                     <button class="tablinks" onclick="openCity(event, 'Psicologia')">Psicología</button>
                                     <button class="tablinks" onclick="openCity(event, 'Evidencias')">Evidencias</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Diagnostico_nut')">Diag. Nut</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Indicaciones')">Med e Indicaciones</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Diagnostico_nut')">Diagnostico Nutricional </button>
+                                    <button class="tablinks" onclick="openCity(event, 'Indicaciones')">Medicamentos e indicaciones</button>
                                     
                                     
                                 </div>
@@ -574,14 +574,14 @@
                                                                 </div>
                                                             </div>    
                                                         </div>
-                                                        <div class="col-12 col-md-4 text-center mt-3">
+                                                        <div class="col-12 col-md-4  mt-3">
                                                             <select class="custom-select mr-sm-5" name="diagnostico" id="diagnostico">
                                                                 <option value="Ingesta (NI)">Ingesta (NI)</option>
                                                                 <option value="Clinical (NC)">Clinical (NC)</option>
                                                                 <option value="Comportamiento ambiental (NB)">Comportamiento ambiental (NB)</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-12 col-md-4 text-center mt-3">
+                                                        <div class="col-12 col-md-4  mt-3">
                                                              <select class="custom-select mr-sm-5" name="ingesta" id="ingesta">
                                                                 <option value="Balance Calórico/energético (1)">Balance Calórico/energético (1)</option>
                                                                 <option value="Ingesta oral o del soporte nutricional">Ingesta oral o del soporte nutricional</option>
@@ -596,7 +596,7 @@
                                                                 <option value="Acceso a alimentos y seguridad">Acceso a alimentos y seguridad</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-12 col-md-4 text-center mt-3">
+                                                        <div class="col-12 col-md-4  mt-3">
                                                             <select class="custom-select mr-sm-5" name="alimentacion" id="alimentacion">
                                                                 <option value="Grasa y colesterol">Grasa y colesterol</option>
                                                                 <option value="Proteína">Proteína</option>
@@ -606,7 +606,7 @@
                                                                 <option value="Multi-nutrientes">Multi-nutrientes</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-12 col-md-5 text-center mt-3">
+                                                        <div class="col-12 col-md-5  mt-3">
                                                             <select class="custom-select mr-sm-5" name="ingestas" id="ingestas">
                                                                 <option value="Ingesta insuficiente de fibra">Ingesta insuficiente de fibra</option>
                                                                 <option value="Ingesta excesiva de fibra">Ingesta excesiva de fibra</option>

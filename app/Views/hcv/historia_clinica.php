@@ -74,14 +74,14 @@
                                 <!-- Tab links -->
                                 <div class="tab">
                                     <button class="tablinks" onclick="openCity(event, 'Heredofamiliares')" id="defaultOpen">Heredofamiliares</button>
-                                    <button class="tablinks" onclick="openCity(event, 'PerNoPatologicos')">PerNoPatologicos</button>
+                                    <button class="tablinks" onclick="openCity(event, 'PerNoPatologicos')">Personales no Patologicos</button>
                                     <button class="tablinks" onclick="openCity(event, 'Nutricionales')">Nutricionales</button>
                                     <button class="tablinks" onclick="openCity(event, 'Ginecoobstetricos')">Ginecoobstetricos</button>
                                     <button class="tablinks" onclick="openCity(event, 'Androgenicos')">Androgenicos</button>
                                     <button class="tablinks" onclick="openCity(event, 'Perinatales')">Perinatales</button>
                                     <button class="tablinks" onclick="openCity(event, 'Psicologicos')">Psicologicos</button>
-                                    <button class="tablinks" onclick="openCity(event, 'PerPatologicos')">PerPatologicos</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Notas1raVez')">Notas1raVez</button>
+                                    <button class="tablinks" onclick="openCity(event, 'PerPatologicos')">Personales  Patologicos</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Notas1raVez')">Notas Primera vez</button>
                                     
                                 </div>
                                 <!-- Tab content -->
