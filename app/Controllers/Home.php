@@ -10,7 +10,7 @@ class Home extends BaseController
 		if( $session->get('logged_in') != null){
 			return redirect()->to(base_url().'/inicio');
 		}else{
-			$data['title'] = "SOLIMAQ";
+			$data['title'] = "RED MEDICA SEGURA";
 			echo view('Login/Signin_view' ,  $data);
 		}
 	}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,36 +38,69 @@
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="<?=base_url()?>/../../assets/css/starlight.css">
-  </head>
+</head>
 
-  <body>
+
+<style>
+    .paciente {
+        background: #5B93D3;
+        color: white;
+        padding: 7px 15px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+
+    }
+</style>
+
+<body>
 
     <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-100v">
         <form method="POST" action="<?php echo base_url().'/Login/verify_login'?>">
-      <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
-        <div class="signin-logo tx-center tx-24 tx-bold tx-inverse"><img src="<?=base_url()?>/../../assets/img/logo_b.png" height="100%" width="100%"></div>
-        <div class="tx-center mg-b-60"><?php if(isset($error)){echo $error;}?></div>
+            <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
+                <div class="signin-logo tx-center tx-24 tx-bold tx-inverse"><img src="<?=base_url()?>/../../assets/img/logo_b.png" height="100%" width="100%"></div>
+                <div class="tx-center mg-b-60"><?php if(isset($error)){echo $error;}?></div>
 
-        <div class="form-group">
-          <input type="text" class="form-control" name="email" placeholder="Ingrese correo electronico">
-        </div><!-- form-group -->
-        <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Ingrese contraseña">
-          <a href="" class="tx-info tx-12 d-block mg-t-10">Recuperar contraseña</a>
-        </div><!-- form-group -->
-        <button type="submit" class="btn btn-info btn-block">ENTRAR</button>
-        <br>
-        <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" placeholder="Ingrese correo electronico">
+                </div><!-- form-group -->
 
-        <!--<div class="mg-t-60 tx-center"><a href="page-signup.html" class="tx-info">Crear cuenta</a></div>-->
-      </div><!-- login-wrapper -->
-  </form>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Ingrese contraseña">
+                    <a href="" class="tx-info tx-12 d-block mg-t-10">Recuperar contraseña</a>
+                </div><!-- form-group -->
+                
+             
+
+
+
+                <button type="submit" class="btn btn-info btn-block">ENTRAR</button>
+                
+                   <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="" class="paciente">Alta paciente</a>
+                    </div><!-- form-group -->
+
+                    <div class="col-lg-6 ">
+                        <a href="" class="paciente">Alta medico</a>
+                    </div><!-- form-group -->
+                </div>
+                </div>
+                <br>
+                <br>
+
+                <!--<div class="mg-t-60 tx-center"><a href="page-signup.html" class="tx-info">Crear cuenta</a></div>-->
+            </div><!-- login-wrapper -->
+        </form>
     </div><!-- d-flex -->
 
     <script src="<?=base_url()?>/../lib/jquery/jquery.js"></script>
     <script src="<?=base_url()?>/../lib/popper.js/popper.js"></script>
     <script src="<?=base_url()?>/../lib/bootstrap/bootstrap.js"></script>
 
-  </body>
-</html>
+</body>
 
+</html>

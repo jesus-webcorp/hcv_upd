@@ -24,7 +24,7 @@ class Login extends BaseController
 				$session->set($newdata);
 				return redirect()->to(base_url().'/inicio'); 
 			}else{
-				$data['title'] = "SOLIMAQ";
+				$data['title'] = "RED MEDICA SEGURA";
 				$data['error'] = "USUARIO O CONTRASEÑA INCORRECTOS";
 				echo view('Login/Signin_view' ,  $data);
 			}
