@@ -103,14 +103,13 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <!-- Tab links -->
-                                <div class="tab">
+                                <div class="tab">                                
                                     <button class="tablinks" onclick="openCity(event, 'Notas')" id="defaultOpen">Signos Vitales Notas y Diagnostico Medico</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Nutricion')">Nutrición</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Nutricion')" >Nutrición</button>
                                     <button class="tablinks" onclick="openCity(event, 'Psicologia')">Psicología</button>
                                     <button class="tablinks" onclick="openCity(event, 'Evidencias')">Evidencias</button>
                                     <button class="tablinks" onclick="openCity(event, 'Diagnostico_nut')">Diagnostico Nutricional </button>
                                     <button class="tablinks" onclick="openCity(event, 'Indicaciones')">Medicamentos e indicaciones</button>
-                                    
                                     
                                 </div>
                                 <!-- Tab content -->
