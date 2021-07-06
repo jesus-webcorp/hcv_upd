@@ -63,50 +63,54 @@
         text-align: center;
 
     }
+
+    .registro-t{
+        font-size: 20px;
+        text-align: center;
+    }
 </style>
 
 <body>
 
     <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-100v">
+
+  
         <form method="POST" action="<?php echo base_url().'/Login/verify_login'?>">
+        
             <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
                 <div class="signin-logo tx-center tx-24 tx-bold tx-inverse"><img src="<?=base_url()?>/../../assets/img/logo_b.png" height="100%" width="100%"></div>
+
+                <div class="registro-t"> Registro de paciente</div>
+
                 <div class="tx-center mg-b-60"><?php if(isset($error)){echo $error;}?></div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Ingrese correo electronico" required >
+                    <input type="text" class="form-control" name="name" placeholder="Ingresa tu nombre" required >
                 </div><!-- form-group -->
-
 
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Ingrese contraseña" required>
-                    <a href="" class="tx-info tx-12 d-block mg-t-10">Recuperar contraseña</a>
+                    <input type="email" class="form-control" name="email" placeholder="Ingrese correo electronico" required >
+                </div><!-- form-group -->
+
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="tel" placeholder="Ingresa tu teléfono" required >
+                </div><!-- form-group -->
+
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña" required>
+                </div><!-- form-group -->
+
+                <div class="form-group">
+                    <input type="password" class="form-control" name="email" placeholder="Repita la contraseña" required >
                 </div><!-- form-group -->
                 
-             
-
-
-
-                <button type="submit" class="btn btn-info btn-block">Ingresar</button>
+                <button type="submit" class="btn btn-info btn-block">Registrar</button>
+                <button type="submit" class="btn btn-info btn-block">Login</button>
                 
-                   <div class="form-group">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <a href="<?=base_url()?>/Registro_paciente" class="paciente">Alta paciente</a>
-                    </div><!-- form-group -->
-
-                    <div class="col-lg-6 ">
-                        <a href="<?=base_url()?>/Registro_medico" class="paciente">Alta medico</a>
-                    </div><!-- form-group -->
-                </div>
-                </div>
-                <br>
-                <br>
-
-                <!--<div class="mg-t-60 tx-center"><a href="page-signup.html" class="tx-info">Crear cuenta</a></div>-->
-            </div><!-- login-wrapper -->
+            
+            </div>
         </form>
-    </div><!-- d-flex -->
+    </div>
 
     <script src="<?=base_url()?>/../lib/jquery/jquery.js"></script>
     <script src="<?=base_url()?>/../lib/popper.js/popper.js"></script>
